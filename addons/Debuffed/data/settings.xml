@@ -1,0 +1,71 @@
+<?xml version="1.1" ?>
+<settings>
+    <global>
+        <bg>
+            <alpha>255</alpha>
+            <blue>0</blue>
+            <green>0</green>
+            <red>0</red>
+            <visible>true</visible>
+        </bg>
+        <blacklist />
+        <flags>
+            <bold>false</bold>
+            <bottom>false</bottom>
+            <draggable>true</draggable>
+            <italic>false</italic>
+            <right>false</right>
+        </flags>
+        <interval>0.1</interval>
+        <mode>blacklist</mode>
+        <padding>0</padding>
+        <pos>
+            <x>0</x>
+            <y>0</y>
+        </pos>
+        <text>
+            <alpha>255</alpha>
+            <blue>255</blue>
+            <font>Arial</font>
+            <fonts>
+
+            </fonts>
+            <green>255</green>
+            <red>255</red>
+            <size>12</size>
+            <stroke>
+                <alpha>255</alpha>
+                <blue>0</blue>
+                <green>0</green>
+                <red>0</red>
+                <width>0</width>
+            </stroke>
+        </text>
+        <timers>true</timers>
+        <whitelist />
+    </global>
+    <eilwolf>
+        <pos>
+            <x>1018</x>
+            <y>1107</y>
+        </pos>
+    </eilwolf>
+    <enuri>
+        <pos>
+            <x>970</x>
+            <y>1126</y>
+        </pos>
+    </enuri>
+    <enuriel>
+        <pos>
+            <x>920</x>
+            <y>1076</y>
+        </pos>
+    </enuriel>
+    <enurihel>
+        <pos>
+            <x>1205</x>
+            <y>1154</y>
+        </pos>
+    </enurihel>
+</settings>

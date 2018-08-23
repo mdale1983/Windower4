@@ -1,0 +1,199 @@
+<?xml version="1.1" ?>
+<settings>
+    <global>
+        <AutoDrop>false</AutoDrop>
+        <AutoStack>true</AutoStack>
+        <Delay>0</Delay>
+        <Drop> </Drop>
+        <Lot />
+        <Pass />
+        <Verbose>false</Verbose>
+    </global>
+    <enuri>
+        <AutoDrop>true</AutoDrop>
+		<lot>
+			Carabosse's gem, Cirein-croin's Lantern
+		</lot>
+        <Drop>
+			Flame Geode, Soil Geode, Hare Meat, Magic Pot Shard, Imp Wing, Gargouille shank,
+			Grain seeds, Lizard Skin, Pugil Scales, 
+			land crab meat, Kemas Earring, Cluster Ash, Colibri Feather,
+			Murex Spicule, Amb. Pseudopod, Sanguinet, Mocking Beak,
+			Buffalo Meat, Divine Log, Gold thread, Spider web,
+			Crab shell, Beastman blood, Fire Ore, Urushi, Cluster Core,
+			Unicorn Horn, Apkallu Feather, Spheroid Plate, Tantra Seal: Legs,
+			Cursed Key, Coeurl Meat, Afflictors, Sharpeye mantle, 
+			Rainbow Cloth, Breeze Geode, Light Geode, Titanite, 
+			Lambent Scale, Limule Pincer, Giant Stinger, Galateia, 
+			Karakul wool, Chasmic Stinger, Clot Plasma, Lacquer Tree Log,
+			Beehive Chip, Terebellum mantle, Aristo belt, Ryoshi Hachimaki,
+			Porxie Pork, Shadow Geode,
+			Porxie Wing, 
+			Two-leaf mandragora bud, Honey, Pebble, Insect wing, 
+			Aqua geode, Ramuite, Leviatite, Leafkin Frond, Umbril Ooze,
+			Goblin Helm, Bat Wing, Bat Fang, 
+			Meteorite, Revival Root, Fiend Blood, Goblin Armor, Ifritite, 
+			Fenrite, Goblin Mail, Fresh Mugwort, Im. Tea Leaves, 
+			Cirque seal: Body, Goblin Mask,Savanna gages, 
+			Brute gauntlets, Moblin Mask, Carbite, 
+			Savant's Seal: Body, Hi-Potion +2, Durium Ore, Hi-Potion, 
+			Bizen-osafune, Thunder V, Elixir, X-Potion +1,
+			Baramnesia,Fluorite,Behemoth Horn,Foe Lullaby II,
+			Fiendish Skin,Kitron,Pro-Ether +1,
+			Moonstone,Mind Potion,Absorb-Attri,
+			Aquamarine,Phil. Stone,Darksteel Ore,Teak Log,Fire Carol II,
+			Imperial Cermet,X-Potion +2, Emperor Fish,
+			Kakka: Ichi,Jadeite,Arbuda Grip,Hi-Potion +3,
+			Dexterity Potion,Hydra Fang,Shell V,King Truffle,Gain-AGI,
+			X-Potion +3,Charisma Potion,Hi-Elixir,Granite,
+			Strength Potion,Persikos,Murasamemaru,Wyvern Scales,Breakga,
+			Crystal Petrifact,Enlight,Anc. Beast Horn,Chrysoberyl,Ram Horn,
+			Cure VI,Cerberus Meat,Hi-Potion +1,Demon Horn,Mythril Ore,
+			Dragon Meat,Stone V,Ram Skin,Endark,Valor Minuet V,W. Spider&apos;s Web,
+			Ruszor Meat,Platinum Ore,Int. Potion,Manticore Hide,Ace&apos;s Mail,
+			Mahogany Log,Gold Ore,Translucent Rock,Sunstone,Animus Augeo,Phrygian Ore,
+			Zircon,Coral Fragment,Vitality Potion,Agility Potion,
+			Flocon-de-mer,Regen IV,Pro-Ether,Beech Log,Ebony Log
+		</Drop>
+    </enuri>
+	<enurihel>
+        <AutoDrop>true</AutoDrop>
+		<lot>
+		</lot>
+        <Drop>
+			Flame Geode, Soil Geode, Hare Meat, Magic Pot Shard, Imp Wing, Gargouille shank,
+			Grain seeds, Lizard Skin, Pugil Scales, 
+			land crab meat, Kemas Earring, Cluster Ash, Colibri Feather,
+			Murex Spicule, Amb. Pseudopod, Sanguinet, Mocking Beak,
+			Buffalo Meat, Divine Log, Gold thread, Spider web,
+			Crab shell, Beastman blood, Fire Ore, Urushi, Cluster Core,
+			Unicorn Horn, Apkallu Feather, Spheroid Plate, Tantra Seal: Legs,
+			Cursed Key, Coeurl Meat, Afflictors, Sharpeye mantle, 
+			Rainbow Cloth, Breeze Geode, Light Geode, Titanite, 
+			Lambent Scale, Limule Pincer, Giant Stinger, Galateia, 
+			Karakul wool, Chasmic Stinger, Clot Plasma, Lacquer Tree Log,
+			Beehive Chip, Terebellum mantle, Aristo belt, Ryoshi Hachimaki,
+			Porxie Pork, Shadow Geode,
+			Porxie Wing, 
+			Two-leaf mandragora bud, Honey, Pebble, Insect wing, 
+			Aqua geode, Ramuite, Leviatite, Leafkin Frond, Umbril Ooze,
+			Goblin Helm, Bat Wing, Bat Fang, 
+			Meteorite, Revival Root, Fiend Blood, Goblin Armor, Ifritite, 
+			Fenrite, Goblin Mail, Fresh Mugwort, Im. Tea Leaves, 
+			Cirque seal: Body, Goblin Mask,Savanna gages, 
+			Brute gauntlets, Moblin Mask, Carbite, 
+			Savant's Seal: Body, Hi-Potion +2, Durium Ore, Hi-Potion, 
+			Bizen-osafune, Thunder V, Elixir, X-Potion +1,
+			Baramnesia,Fluorite,Behemoth Horn,Foe Lullaby II,
+			Fiendish Skin,Kitron,Pro-Ether +1,
+			Moonstone,Mind Potion,Absorb-Attri,
+			Aquamarine,Phil. Stone,Darksteel Ore,Teak Log,Fire Carol II,
+			Imperial Cermet,X-Potion +2, Emperor Fish,
+			Kakka: Ichi,Jadeite,Arbuda Grip,Hi-Potion +3,
+			Dexterity Potion,Hydra Fang,Shell V,King Truffle,Gain-AGI,
+			X-Potion +3,Charisma Potion,Hi-Elixir,Granite,
+			Strength Potion,Persikos,Murasamemaru,Wyvern Scales,Breakga,
+			Crystal Petrifact,Enlight,Anc. Beast Horn,Chrysoberyl,Ram Horn,
+			Cure VI,Cerberus Meat,Hi-Potion +1,Demon Horn,Mythril Ore,
+			Dragon Meat,Stone V,Ram Skin,Endark,Valor Minuet V,W. Spider&apos;s Web,
+			Ruszor Meat,Platinum Ore,Int. Potion,Manticore Hide,Ace&apos;s Mail,
+			Mahogany Log,Gold Ore,Translucent Rock,Sunstone,Animus Augeo,Phrygian Ore,
+			Zircon,Coral Fragment,Vitality Potion,Agility Potion,
+			Flocon-de-mer,Regen IV,Pro-Ether,Beech Log,Ebony Log
+		</Drop>
+    </enurihel>
+	<Eilwolf>
+        <AutoDrop>true</AutoDrop>
+		<lot>
+			High Kindred crest,
+		</lot>
+        <Drop>
+			Flame Geode, Soil Geode, Hare Meat, Magic Pot Shard, Imp Wing, Gargouille shank,
+			Grain seeds, Lizard Skin, Pugil Scales, 
+			land crab meat, Kemas Earring, Cluster Ash, Colibri Feather,
+			Murex Spicule, Amb. Pseudopod, Sanguinet, Mocking Beak,
+			Buffalo Meat, Divine Log, Gold thread, Spider web,
+			Crab shell, Beastman blood, Fire Ore, Urushi, Cluster Core,
+			Unicorn Horn, Apkallu Feather, Spheroid Plate, Tantra Seal: Legs,
+			Cursed Key, Coeurl Meat, Afflictors, Sharpeye mantle, 
+			Rainbow Cloth, Breeze Geode, Light Geode, Titanite, 
+			Lambent Scale, Limule Pincer, Giant Stinger, Galateia, 
+			Karakul wool, Chasmic Stinger, Clot Plasma, Lacquer Tree Log,
+			Beehive Chip, Terebellum mantle, Aristo belt, Ryoshi Hachimaki,
+			Porxie Pork, Shadow Geode,
+			Porxie Wing, 
+			Two-leaf mandragora bud, Honey, Pebble, Insect wing, 
+			Aqua geode, Ramuite, Leviatite, Leafkin Frond, Umbril Ooze,
+			Goblin Helm, Bat Wing, Bat Fang, 
+			Meteorite, Revival Root, Fiend Blood, Goblin Armor, Ifritite, 
+			Fenrite, Goblin Mail, Fresh Mugwort, Im. Tea Leaves, 
+			Cirque seal: Body, Goblin Mask,Savanna gages, 
+			Brute gauntlets, Moblin Mask, Carbite, 
+			Savant's Seal: Body, Hi-Potion +2, Durium Ore, Hi-Potion, 
+			Bizen-osafune, Thunder V, Elixir, X-Potion +1,
+			Baramnesia,Fluorite,Behemoth Horn,Foe Lullaby II,
+			Fiendish Skin,Kitron,Pro-Ether +1,
+			Moonstone,Mind Potion,Absorb-Attri,
+			Aquamarine,Phil. Stone,Darksteel Ore,Teak Log,Fire Carol II,
+			Imperial Cermet,X-Potion +2, Emperor Fish,
+			Kakka: Ichi,Jadeite,Arbuda Grip,Hi-Potion +3,
+			Dexterity Potion,Hydra Fang,Shell V,King Truffle,Gain-AGI,
+			X-Potion +3,Charisma Potion,Hi-Elixir,Granite,
+			Strength Potion,Persikos,Murasamemaru,Wyvern Scales,Breakga,
+			Crystal Petrifact,Enlight,Anc. Beast Horn,Chrysoberyl,Ram Horn,
+			Cure VI,Cerberus Meat,Hi-Potion +1,Demon Horn,Mythril Ore,
+			Dragon Meat,Stone V,Ram Skin,Endark,Valor Minuet V,W. Spider&apos;s Web,
+			Ruszor Meat,Platinum Ore,Int. Potion,Manticore Hide,Ace&apos;s Mail,
+			Mahogany Log,Gold Ore,Translucent Rock,Sunstone,Animus Augeo,Phrygian Ore,
+			Zircon,Coral Fragment,Vitality Potion,Agility Potion,
+			Flocon-de-mer,Regen IV,Pro-Ether,Beech Log,Ebony Log
+		</Drop>
+    </Eilwolf>
+	<enuriel>
+        <AutoDrop>true</AutoDrop>
+		<lot>
+		
+		</lot>
+        <Drop>
+			Flame Geode, Soil Geode, Hare Meat, Magic Pot Shard, Imp Wing, Gargouille shank,
+			Grain seeds, Lizard Skin, Pugil Scales, 
+			land crab meat, Kemas Earring, Cluster Ash, Colibri Feather,
+			Murex Spicule, Amb. Pseudopod, Sanguinet, Mocking Beak,
+			Buffalo Meat, Divine Log, Gold thread, Spider web,
+			Crab shell, Beastman blood, Fire Ore, Urushi, Cluster Core,
+			Unicorn Horn, Apkallu Feather, Spheroid Plate, Tantra Seal: Legs,
+			Cursed Key, Coeurl Meat, Afflictors, Sharpeye mantle, 
+			Rainbow Cloth, Breeze Geode, Light Geode, Titanite, 
+			Lambent Scale, Limule Pincer, Giant Stinger, Galateia, 
+			Karakul wool, Chasmic Stinger, Clot Plasma, Lacquer Tree Log,
+			Beehive Chip, Terebellum mantle, Aristo belt, Ryoshi Hachimaki,
+			Porxie Pork, Shadow Geode,
+			Porxie Wing, 
+			Two-leaf mandragora bud, Honey, Pebble, Insect wing, 
+			Aqua geode, Ramuite, Leviatite, Leafkin Frond, Umbril Ooze,
+			Goblin Helm, Bat Wing, Bat Fang, 
+			Meteorite, Revival Root, Fiend Blood, Goblin Armor, Ifritite, 
+			Fenrite, Goblin Mail, Fresh Mugwort, Im. Tea Leaves, 
+			Cirque seal: Body, Goblin Mask,Savanna gages, 
+			Brute gauntlets, Moblin Mask, Carbite, 
+			Savant's Seal: Body, Hi-Potion +2, Durium Ore, Hi-Potion, 
+			Bizen-osafune, Thunder V, Elixir, X-Potion +1,
+			Baramnesia,Fluorite,Behemoth Horn,Foe Lullaby II,
+			Fiendish Skin,Kitron,Pro-Ether +1,
+			Moonstone,Mind Potion,Absorb-Attri,
+			Aquamarine,Phil. Stone,Darksteel Ore,Teak Log,Fire Carol II,
+			Imperial Cermet,X-Potion +2, Emperor Fish,
+			Kakka: Ichi,Jadeite,Arbuda Grip,Hi-Potion +3,
+			Dexterity Potion,Hydra Fang,Shell V,King Truffle,Gain-AGI,
+			X-Potion +3,Charisma Potion,Hi-Elixir,Granite,
+			Strength Potion,Persikos,Murasamemaru,Wyvern Scales,Breakga,
+			Crystal Petrifact,Enlight,Anc. Beast Horn,Chrysoberyl,Ram Horn,
+			Cure VI,Cerberus Meat,Hi-Potion +1,Demon Horn,Mythril Ore,
+			Dragon Meat,Stone V,Ram Skin,Endark,Valor Minuet V,W. Spider&apos;s Web,
+			Ruszor Meat,Platinum Ore,Int. Potion,Manticore Hide,Ace&apos;s Mail,
+			Mahogany Log,Gold Ore,Translucent Rock,Sunstone,Animus Augeo,Phrygian Ore,
+			Zircon,Coral Fragment,Vitality Potion,Agility Potion,
+			Flocon-de-mer,Regen IV,Pro-Ether,Beech Log,Ebony Log
+		</Drop>
+    </enuriel>
+</settings>

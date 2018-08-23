@@ -1,0 +1,42 @@
+<settings>
+	<global>
+		<!-- This will be used for all the characters that you don't make a specific set of plugins/addons for -->
+		<plugin>Timers</plugin>
+	</global>
+	<Enuri> <!-- This is just an example. You need to replace "YourName" to the left and below with the character name that you want the set of plugins to work for. -->
+	<!-- Plugin Section -->
+		<plugin>Timers</plugin>
+	<!-- Addon Section -->
+		<addon>scoreboard</addon>
+		<addon>send</addon>
+		<addon>battlemod</addon>
+		<addon>Anchor</addon>
+		<addon>React</addon>
+		<addon>Gearswap</addon>
+		<addon>Dressup</addon>
+	</Enuri>
+	<Eilwolf> <!-- This is just an example. You need to replace "YourName" to the left and below with the character name that you want the set of plugins to work for. -->
+	<!-- Plugin Section -->
+		<plugin>Timers</plugin>
+	<!-- Addon Section -->
+		<addon>scoreboard</addon>
+		<addon>send</addon>
+		<addon>battlemod</addon>
+		<addon>Anchor</addon>
+		<addon>React</addon>
+		<addon>Gearswap</addon>
+		<addon>Gametime</addon>
+		
+	</Eilwolf>
+	<Enurihel> <!-- This is just an example. You need to replace "YourName" to the left and below with the character name that you want the set of plugins to work for. -->
+	<!-- Plugin Section -->
+		<plugin>Timers</plugin>
+	<!-- Addon Section -->
+		<addon>send</addon>
+		<addon>battlemod</addon>
+		<addon>Anchor</addon>
+		<addon>React</addon>
+		<addon>Gearswap</addon>
+		<addon>Dressup</addon>
+	</Enurihel>
+</settings>
