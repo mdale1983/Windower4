@@ -64,8 +64,8 @@ include('augments.lua')
 	}}]]
 	sets.precast.CorsairRoll = {
         range="Compensator",
-		head="Lanun Tricorne +1",
-        hands="Chasseur's Gants",
+		head="Lanun Tricorne",
+        hands="Chasseur's Gants +1",
         body="Lanun Frac +1",
 		neck="Regal Necklace",
         back="Camulus's mantle",
@@ -159,7 +159,7 @@ include('augments.lua')
 		sets.midcast.RA = {
 			ammo=gear.RAbullet,
 			head="Meghanada visor +1",
-			neck="Iqabi Necklace",
+			neck="Sanctity necklace",
 			ear1="Enervating Earring",
 			ear2="Telos Earring",
 			body="Adhemar jacket",
@@ -193,6 +193,7 @@ include('augments.lua')
 --		Engaged sets			--
 ----------------------------------	
 	sets.engaged = {
+		range="Anarchy +3",
         ammo=gear.RAbullet,
         head="Skormoth Mask",
         neck="Iqabi Necklace",
@@ -203,22 +204,38 @@ include('augments.lua')
         ring1="Raja's Ring",
         ring2="Longshot Ring",
         back="Gunslinger's Cape",
-        waist="Elanid Belt",
+        waist="Grunfeld rope",
         legs="Adhemar Kecks",
         feet="Lanun Bottes"
     }
+	sets.engaged.RA = { 
+		ammo=gear.RAbullet,
+		head="Meghanada visor +1",
+		neck="Iqabi necklace",
+		ear1="Enervating Earring",
+		ear2="Telos Earring",
+		body="Sayadio's kaftan",
+		hands="Meghanada gloves +1",
+		ring1="Meghanada Ring",
+		ring2="Regal Ring",
+		back="Gunslinger's Cape",
+		waist="Eschan stone",
+		legs="Meghanada chausses +1",
+		feet="Meghanada jambeaux +1"
+	}
 	sets.engaged.Melee = {
+		range="Anarchy +3",
         ammo=gear.RAbullet,
-        head="Skormoth Mask",
+        head="Meghanada visor +1",
         neck="Lissome Necklace",
         ear1="Cessance Earring",
-        ear2="Brutal Earring",
-        body="Rawhide Vest",
-        hands="Floral Gauntlets",
+        ear2="Telos Earring",
+        body="Adhemar jacket",
+        hands="Adhemar wristbands",
         ring1="Chirich Ring",
         ring2="Epona's Ring",
-        back="Bleating Mantle",
-        waist="Windbuffet Belt +1",
+        back="Camulu's Mantle",
+        waist="Grunfeld rope",
         legs="Samnuha Tights",
         feet="Taeon Boots"
     }
@@ -230,7 +247,7 @@ include('augments.lua')
         hands="Adhemar wristbands",
         body="Adhemar jacket",
         legs="Samnuha tights",
-        waist="Kentarch belt +1",
+        waist="Grunfeld rope",
 		back="Camulus's mantle",
         feet="Herculean boots",
     })

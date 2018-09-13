@@ -14,7 +14,8 @@ user_settings = {
         Ninjutsu = T{},
         Singing = T{'Advancing March', 'Sword Madrigal', 'Valor Minuet', 'Valor Minuet II', 'Valor Minuet III'},
         Blue = T{},
-        Summoning = T{}},
+        Summoning = T{'Carbuncle', 'Ifrit', 'Titan', 'Diablos'}
+	},
     save_settings = false} --change this to true if you wish to save the last position of your skillup window
 sets.brd = {
     wind_inst = {

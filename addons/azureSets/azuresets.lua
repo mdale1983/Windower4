@@ -71,7 +71,7 @@ windower.register_event('login', initialize)
 windower.register_event('job change', initialize:cond(function(job) return job == 16 end))
 
 function set_spells(spellset, setmode)
-    if windower.ffxi.get_player()['main_job_id'] ~= 16 --[[and windower.ffxi.get_player()['sub_job_id'] ~= 16]] then
+    if windower.ffxi.get_player()['main_job_id'] ~= 16 and windower.ffxi.get_player()['sub_job_id'] ~= 16 then
         error('Main job not set to Blue Mage.')
         return
     end
@@ -160,7 +160,7 @@ function find_spell_id_by_name(spellname)
 end
 
 function set_single_spell(setspell,slot)
-    if windower.ffxi.get_player()['main_job_id'] ~= 16 --[[and windower.ffxi.get_player()['sub_job_id'] ~= 16]] then return nil end
+    if windower.ffxi.get_player()['main_job_id'] ~= 16 and windower.ffxi.get_player()['sub_job_id'] ~= 16 then return nil end
 
     local tmpTable = T(get_current_spellset())
     for key,val in pairs(tmpTable) do
@@ -229,7 +229,7 @@ function get_spellset_content(spellset)
 end
 
 windower.register_event('addon command', function(...)
-    if windower.ffxi.get_player()['main_job_id'] ~= 16 --[[and windower.ffxi.get_player()['sub_job_id'] ~= 16]] then
+    if windower.ffxi.get_player()['main_job_id'] ~= 16 and windower.ffxi.get_player()['sub_job_id'] ~= 16 then
         error('You are not on (main) Blue Mage.')
         return nil
     end

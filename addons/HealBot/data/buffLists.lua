@@ -53,6 +53,7 @@ return {
         },
         ['self'] = {
             'Haste',
+			'Aurorastorm',
             'Aquaveil',
             'Protectra V',
             'Shellra V',
@@ -79,21 +80,15 @@ return {
         ['melee'] = {
             'Haste'
         },
-        ['self'] = {
-            'Light Arts',
+       ['self'] = {
+            'Haste',
+			'Aurorastorm',
             'Aquaveil',
             'Protectra V',
             'Shellra V',
             'Reraise IV',
-            'Afflatus Solace'
+            'Afflatus Solace',
+			'Sublimation'
         }
-    },
-	['geo/rdm'] = {
-        ['melee'] = {
-            'Geo-Regen'
-        },
-        ['self'] = {
-            'Indi-Precision',
-        }
-    },
+    }
 }

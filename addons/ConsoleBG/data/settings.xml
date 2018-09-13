@@ -8,12 +8,17 @@
             <red>0</red>
         </bg>
         <extents>
-            <x>600</x>
-            <y>314</y>
+            <x>800</x>
+            <y>350</y>
         </extents>
         <pos>
             <x>1</x>
             <y>25</y>
         </pos>
     </global>
+    <enuri>
+        <extents>
+            <x>1700</x>
+        </extents>
+    </enuri>
 </settings>

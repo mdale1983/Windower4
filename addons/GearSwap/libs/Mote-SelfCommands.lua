@@ -202,7 +202,6 @@ function handle_toggle(cmdParams)
     end
 end
 
-
 -- Function to force a boolean field to false.
 -- User command format: gs c unset [field]
 function handle_unset(cmdParams)

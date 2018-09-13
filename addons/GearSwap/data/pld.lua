@@ -8,14 +8,25 @@
 	function get_sets()
 		mote_include_version = 2
 		--[[Load and Initialize the include file]]
-		include('Mote-Include.lua')
+		include('Mote-IncludePLD.lua')
 	end 
 --------------------------
 -- 	Job Setup Section 	--
 --------------------------
 	function job_setup()
+		include('caster_buffWatcher.lua')
+		buffWatcher.watchList = 
+		{
+			["Enlight"]="Enlight II",
+			["Enmity Boost"]="Crusade",
+			["Phalanx"]="Phalanx",
+			["Protect"]="Protect V",
+			["Shell"]="Shell IV",							   
+		}
+		include('common_info.status.lua')
 		state.CapacityMode = M(false, 'Capacity Point Mantle')
-		shieldList = S{'Ochain', 'Aegis'}
+		shieldList = S{'Aegis', 'Ochain'}
+		state.mainWeapon = M{'Aegis', 'Ochain'}
 		moonshade_WS = S{"Resolution", "Dimidiation", "Savage Blade", "Vorpal Blade", 
 						 "Requiescat", "Sanguine Blade"}
 		PhysicalSpells = S {
@@ -57,6 +68,8 @@
 		send_command('bind !f9 gs c cycle OffenseMode')
 		send_command('bind f11 gs c cycle WeaponskillMode') --F11
 		send_command('bind != gs c toggle CapacityMode')    --alt=
+		send_command('bind !f9 gs c set mainWeapon "Ochain"')
+		send_command('bind ^f9 gs c set mainWeapon "Aegis"')
 		select_default_macro_book()
 		set_lockstyle()
 	end 
@@ -142,24 +155,17 @@
     ------------------------------------------------------------------	
 		function job_status_change(newStatus, oldStatus, eventArgs)
 			if newStatus == "Idle" then
-				-- handle weapon sets
-				if player.equipment.main == 'Ochain' then
-					state.CombatWeapon:set('Ochain')
-				elseif player.equipment.main == 'Aegis' then
-					state.CombatWeapon:set('Aegis')
-				elseif player.equipment.main == 'Caladbolg' then
-					state.CombatWeapon:set('Caladbolg')
-				end
+				
 			end 
 		end
-	function get_combat_weapon() 
-		if shieldList:contains(player.equipment.sub) then 
-			state.CombatWeapon:set('Ochain')
-		elseif player.equipment.sub == 'Aegis' then 
-			state.CombatWeapon:set('Aegis')
-		elseif player.equipment.sub == 'Dynamis Shield' then 
-			state.CombatWeapon:set('Dynamis')
-		end 
+	function get_combat_weapon()
+		if state.mainWeapon.value == "Ochain" then 
+				equip({sub="Ochain"})
+				--set_macro_page(2, 6)
+		elseif state.mainWeapon.value == "Aegis" then 
+				equip({sub="Aegis"})
+				--set_macro_page(3, 6)
+		end
 	end 
 	function job_update(cmdParams, eventArgs)
 		get_combat_weapon()
@@ -171,6 +177,70 @@
 	function update_melee_groups()
 		classes.CustomMeleeGroups:clear()
 	end
+----------------------
+-- Precast section  --
+----------------------
+	function job_post_precast(spell, action, spellMap, eventArgs)
+		if spell.english == 'Rayke' then 
+			send_command('@input /p Rayke used lowering enemies '..state.Rune2.value..' resistance'  )
+		end
+		if spell.english == 'Gambit' then 
+			send_command('@input /p Gambit used lowering enemies '..state.Rune2.value..' defense'  )
+		end 
+		if spell.english == 'Lunge' then
+			local abil_recasts = windower.ffxi.get_ability_recasts()
+			if abil_recasts[spell.recast_id] > 0 then
+				send_command('input /jobability "Swipe" <t>')
+				add_to_chat(122, '*Lunge Aborted: Timer on Cooldown -- Downgrading to Swipe.*')
+				eventArgs.cancel = true
+			return
+			end
+		end
+		if spell.english == 'Valiance' then
+			local abil_recasts = windower.ffxi.get_ability_recasts()
+			if abil_recasts[spell.recast_id] > 0 then
+				send_command('input /jobability "Vallation" <me>')
+				add_to_chat(122, '*Valiance Aborted: Timer on Cooldown -- Downgrading to Vallation.*')
+				eventArgs.cancel = true
+			return
+			end
+		end
+		if spell.english == 'Pflug' then
+			local abil_recasts = windower.ffxi.get_ability_recasts()
+			if abil_recasts[spell.recast_id] > 0 then
+				send_command('input /jobability "Liement" <me>')
+				add_to_chat(122, '*Pflug Aborted: Timer on Cooldown -- Downgrading to Liement.*')
+				eventArgs.cancel = true
+			return
+			end
+		end
+		if spell.english == 'Gambit' then
+			local abil_recasts = windower.ffxi.get_ability_recasts()
+			if abil_recasts[spell.recast_id] > 0 then
+				send_command('input /jobability "Rayke" <t>')
+				add_to_chat(122, '*Gambit Aborted: Timer on Cooldown -- Downgrading to Rayke.*')
+				eventArgs.cancel = true
+			return
+			end
+		end	
+		if spell.action_type=="Magic" and buffactive.Silence then
+			eventArgs.cancel = true
+			send_command('input /item "Echo Drops" <me>')
+		end
+	end
+----------------------
+--  Midcast Section --
+----------------------
+	function job_post_midcast(spell, action, spellMap, eventArgs)
+		if spell.skill == 'Elemental Magic' then
+			if spell.element == world.day_element or spell.element == world.weather_element then
+				equip(sets.midcast['Elemental Magic'], {waist="Hachirin-no-Obi"})
+			end
+		end
+		if S{"Dimidiation","Resolution"}:contains(spell.english) and (spell.element==world.day_element or spell.element==world.weather_element) then
+			equip({head="Gavialis Helm"})
+		end
+	end	
 ------------------------------------------------------------------
 -- Called when a player gains or loses a buff.                  --
 -- buff == buff gained or lost                                  --
@@ -189,6 +259,10 @@
 				handle_equipping_gear(player.status)
 			end
 		end
+		if buffactive['Bio'] and world.area == "Maquette Abdhaljs-Legion" then 
+			send_command('@input /item "Panacea" <me>')
+			add_to_chat(7,'Bio is on remove it now!')
+		end 
 		if buff:lower()=='sleep' then
 			if gain and player.hp > 120 and player.status == "Engaged" then -- Equip Berserker's Torque / frenzy When You Are Asleep
 				equip(sets.Asleep)

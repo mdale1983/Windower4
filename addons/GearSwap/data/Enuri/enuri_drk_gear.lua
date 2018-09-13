@@ -21,16 +21,13 @@ include('augments.lua')
 --		Job Ability sets		--
 ----------------------------------
 	sets.precast.JA['Diabolic Eye'] = {
-		hands="Abyss gauntlets +2"
-	}
-	sets.precast.JA['Diabolic Eye'] = {
 		hands="Fallen's Finger Gauntlets"
 	}
     sets.precast.JA['Nether Void']  = {
 		legs="Bale Flanchard +2"
 	}
     sets.precast.JA['Dark Seal']    = {
-		head="Fallen's burgeonet +1"
+		head="Fallen's burgeonet"
 	}
     sets.precast.JA['Souleater']    = {
 		head="Ignominy burgeonet +2"
@@ -343,7 +340,7 @@ include('augments.lua')
 		neck="Fotia gorget",
 		waist="Fotia belt",
 		ear1="Ishvara Earring",
-		ear2="Cessance earring",
+		ear2="Brutal earring",
 		ring1="Shukuyu ring",
 		ring2="Rufescent ring",
 	})
@@ -357,7 +354,7 @@ include('augments.lua')
 		neck="Fotia gorget",
 		waist="Fotia belt",
 		ear1="Ishvara Earring",
-		ear2="Cessance earring",
+		ear2="Brutal earring",
 		ring1="Shukuyu ring",
 		ring2="Rufescent ring",
 	})
@@ -408,6 +405,21 @@ include('augments.lua')
 --------------------------------------
 --		Greatsword Weaponskill		--
 --------------------------------------
+	--[[sets.precast.WS = {
+		ammo="Seething bomblet",
+		head=Valor.Head.WS,
+		body="Ignominy cuirass +2",
+		hands=Odyssean.Hands.WS,
+		legs=Odyssean.Legs.VitWS,
+		feet="Sulev. leggings +2",
+		neck="Fotia gorget",
+		ear1="Telos Earring",
+		ear2="Bale earring",
+		ring1="Ifrit ring",
+		ring2="Ifrit ring",
+		waist="Fotia belt",
+		back=Ankou.StrWS
+	}]]
 	sets.precast.WS['Scourge'] = set_combine(sets.precast.WS, {
 		ammo="Ginsen"
 	})
@@ -423,14 +435,16 @@ include('augments.lua')
 		back=Ankou.VitWS
 	})
 	sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, { 
-		ammo="Knobkierrie",
-		head="Argosy celata",	
-		body="Ignominy cuirass +2",
-		hands="Sulevia's gauntlets +2",	
+		ammo="Seething bomblet",
+		head="Argosy celata +1",	
+		body=Valor.Body.TP,
+		hands="Argosy mufflers +1",	
 		legs="Ignominy flanchard +2",		
-		feet="Sulevia's leggings +2",
+		feet="Argosy sollerets +1",
 		ring1="Regal ring",
-		ring2="Shukuyu ring"
+		ring2="Shukuyu ring",
+		ear1="Brutal earring",
+		back=Ankou.TP
 	})   					
 	sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS['Resolution'], {
 		ear1="Zennaroi earring",
@@ -445,11 +459,11 @@ include('augments.lua')
 	sets.DT = set_combine(sets.idle, {
 		head="Sulevia's mask +1",
 		body="Sulevia's Plate. +2",
-		ammo="Sihirik",
+		ammo="Staunch tathlum",
 		hands="Sulevia's gauntlets +2",
 		legs="Sulevia's cuisses +1",
         feet="Sulevia's leggings +2",
-		neck="Twilight torque",
+		neck="Loricate torque",
 		ear1="Static Earring",
         ear2="Hearty earring",
         ring1="Defending ring",
@@ -464,7 +478,9 @@ include('augments.lua')
 	})
 	sets.Reraise = set_combine(sets.DT, {
 		head="Twilight helm",
-		body="Twilight mail"
+		body="Twilight mail",
+        back="Solemnity cape",
+		waist="Nierenschutz"
 	})
 	sets.CapacityMantle = {
 		back="Mecisto. Mantle"

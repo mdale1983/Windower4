@@ -102,14 +102,25 @@ function job_setup()
 		gav_ws = S{"Torcleaver","Resolution","Catastrophe","Scourge","Cross Reaper"}
 		get_player_hp()
 		job_update()
+		include('caster_buffWatcher.lua')
+		buffWatcher.watchList = 
+		{
+			["Endark"]="Endark II",
+			["Enmity Boost"]="Crusade",
+			["Phalanx"]="Phalanx",
+			["Phalanx"]="Phalanx",
+			["Protect"]="Protect V",
+			["Shell"]="Shell IV",							   
+		}
+		include('common_info.status.lua')
 	end 
 --------------------------
 --  User Setup Section  --
 --------------------------
 	function user_setup()
 		state.OffenseMode:options('Normal', 'Mid', 'Acc')
-		state.HybridMode:options ('Normal', 'DT')
-		state.ReRaiseMode:options('Normal', 'Reraise')
+		state.HybridMode:options ('Normal', 'DT', 'Reraise')
+		--state.ReRaiseMode:options('Normal')
 		state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
 		state.CastingMode:options('Normal', 'Resistant', 'Enmity')
 	--[[ Overriding default hot keys ]]
@@ -186,10 +197,10 @@ function job_setup()
 			idleSet = set_combine(idleSet, sets.DT)
 			add_to_chat(8, '*Danger Low HP -- equiping DT set*')
 		end 
-		if state.ReRaiseMode.value == "Reraise" then 
+		--[[if state.ReRaiseMode.value == "Reraise" then 
 			idleSet = set_combine(idleSet, sets.Reraise)
 			add_to_chat(8, '*Danger Low HP -- equiping Reraise set*')
-		end 
+		end ]]
 		if player.mpp < 50 then 
 			idleSet = set_combine(idleSet, sets.latentRefresh)
 		end 
@@ -221,15 +232,18 @@ function job_setup()
 --  Custom Melee Gear set    --
 -------------------------------
 	function customize_melee_set(meleeSet)
-		
+		if player.hpp < 50 then 
+			state.HybridMode:set('DT')
+			add_to_chat(7'Your HP percent is '..player.hpp..' Equiping DT set')
+		end 
 		if state.HybridMode.value == "DT" then 
 			meleeSet = set_combine(meleeSet, sets.DT)
-			add_to_chat(8, '*Danger Low HP -- equiping DT set*')
+			add_to_chat(8, '*Danger Low HP is at'..player.hpp..'equiping DT set*')
 		end 
-		if state.ReRaiseMode.value == "Reraise" then 
+		--[[if state.ReRaiseMode.value == "Reraise" then 
 			meleeSet = set_combine(meleeSet, sets.Reraise)
 			add_to_chat(8, '*Danger Low HP -- equiping Reraise set*')
-		end
+		end]]
 		if buffactive['Weakness'] then 
 			equip({head="Twilight helm", body="Twilight mail"})
 			disable('Head', 'Body')
@@ -291,13 +305,13 @@ function job_setup()
 		end
 		function get_combat_weapon()
 			if state.mainWeapon.value == "Apocalypse" then 
-				equip({main="Apocalypse", sub="Tzacab grip"})
+				equip({main="Apocalypse", sub="Utu grip"})
 				set_macro_page(2, 6)
 			elseif state.mainWeapon.value == "Ragnarok" then 
-				equip({main="Ragnarok", sub="Bloodrain strap"})
+				equip({main="Ragnarok", sub="Utu grip"})
 				set_macro_page(3, 6)
 			elseif state.mainWeapon.value == "Caladbolg" then 
-				equip({main="Caladbolg", sub="Bloodrain strap"})
+				equip({main="Caladbolg", sub="Utu strap"})
 				set_macro_page(1, 6) 
 			end
 			if gsList:contains(player.equipment.main) then
@@ -404,7 +418,7 @@ function job_setup()
 		end
 		if buff:lower()=='terror' or buff:lower()=='petrification' or buff:lower()=='stun' then
 			if gain then
-				equip(sets.defense.DT)
+				equip(sets.DT)
 				add_to_chat(8, 'DT set is equiped')
 			elseif not gain then 
 				handle_equipping_gear(player.status)

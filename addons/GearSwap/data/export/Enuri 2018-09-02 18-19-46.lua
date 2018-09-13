@@ -1,0 +1,17 @@
+sets.exported={
+    main={ name="Vampirism", augments={'STR+3','INT+5','"Occult Acumen"+3','DMG:+3',}},
+    sub="Aegis",
+    ammo="Incantor Stone",
+    head={ name="Carmine Mask", augments={'Accuracy+15','Mag. Acc.+10','"Fast Cast"+3',}},
+    body={ name="Odyss. Chestplate", augments={'Attack+11','"Fast Cast"+2','STR+9',}},
+    hands={ name="Leyline Gloves", augments={'Accuracy+1','Mag. Acc.+5','"Mag.Atk.Bns."+5','"Fast Cast"+1',}},
+    legs="Enif Cosciales",
+    feet={ name="Odyssean Greaves", augments={'"Fast Cast"+4','Mag. Acc.+15',}},
+    neck="Loricate Torque",
+    waist="Chuq'aba Belt",
+    left_ear="Halasz Earring",
+    right_ear="Loquac. Earring",
+    left_ring="Defending Ring",
+    right_ring="Kishar Ring",
+    back={ name="Weard Mantle", augments={'VIT+2','DEX+4','Enmity+7','Phalanx +3',}},
+}

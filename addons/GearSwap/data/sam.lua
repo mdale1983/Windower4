@@ -22,7 +22,7 @@
 		state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
 		state.CapacityMode = M(false, 'Capacity Point Mantle')
 		moonshade_WS = S{
-			"Tachi: Fudo"
+			"Tachi: Fudo", "Tachi: Rana", "Tachi: Kasha", "Tachi: Gekko"
 		}
 		gav_ws = S{"Tachi: Fudo","Tachi: Kasha","Tachi: Gekko"}
 		job_update()
@@ -33,7 +33,7 @@
 	function user_setup()
 		state.OffenseMode:options('Normal', 'Mid', 'Acc')
 		state.HybridMode:options ('Normal', 'DT')
-		--state.ReRaiseMode:options('Normal', 'Reraise')
+		state.ReRaiseMode:options('Normal', 'Reraise')
 		state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
 	--[[ Overriding default hot keys ]]
 		send_command('bind f11 gs c cycle HybridMode')      --F10
@@ -91,6 +91,10 @@
 			else 
 			enable('Head', 'Body')
 		end 
+		if S{"Dynamis - Qufim"}:contains(world.area) then
+			equip({body="Saotome domaru +2"})
+			disable('Body')
+		end
 		if state.CapacityMode.value then 
 			idleSet = set_combine(idleSet, sets.CapacityMantle)
 		end
@@ -129,6 +133,10 @@
 		if state.CapacityMode.value then 
 			meleeSet = set_combine(meleeSet, sets.CapacityMantle)
 		end
+		--[[if S{"Dynamis - Tavnazia"}:contains(world.area) then
+			equip({body="Saotome domaru +2"})
+			disable('Body')
+		end]]
 		if buffactive['Warding Circle'] then
 			meleeSet = set_combine(meleeSet, {body="Founder's Breastplate"})
 		end
@@ -150,15 +158,32 @@
 			update_melee_groups()
 		end 
 		function job_status_change(newStatus, oldStatus, eventArgs)
-			--[[Currently left blank...]]
+			
 		end 
 		function get_combat_form()
-			if (buffactive.haste and buffactive.hasso and buffactive.march == 2) then 
-				add_to_chat(8, '---Weapon Delay is not Capped---')
-			end 
-			------------------------------------------------------
-			--  Can add in more here this is just a placeholder --
-			------------------------------------------------------
+			classes.CustomMeleeGroups:clear()
+			-- Hasso 16%
+			-- Haste (white magic) 15%
+			-- Haste Samba (Sub) 5%
+			-- Haste (Merited DNC) 10%
+			-- Victory March +3/+4/+5     14%/15.6%/17.1%
+			-- Advancing March +3/+4/+5   10.9%/12.5%/14%
+			-- Embrava 25%
+			if (buffactive.embrava or buffactive.haste) and buffactive.march == 2 then
+				add_to_chat(8, '-------------Haste 43%-------------')
+				classes.CustomMeleeGroups:append('Haste_43')
+			elseif buffactive.embrava and buffactive.haste then
+				add_to_chat(8, '-------------Haste 40%-------------')
+				classes.CustomMeleeGroups:append('Haste_40')
+			elseif (buffactive.haste ) or (buffactive.march == 2 and buffactive['haste samba']) then
+				add_to_chat(8, '-------------Haste 30%-------------')
+				classes.CustomMeleeGroups:append('Haste_30')
+			elseif buffactive.hasso or buffactive.march == 2 then
+				add_to_chat(8, '-------------Haste 25%-------------')
+				classes.CustomMeleeGroups:append('Haste_25')
+			elseif (buffactive.hasso and buffactive.haste) then 
+				add_to_chat(8, '-------------Haste 31%-------------')
+			end
 		end
 		function get_combat_weapon()
 			--currently left blank

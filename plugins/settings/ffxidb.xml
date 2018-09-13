@@ -8,13 +8,13 @@
         <ShowNPC>true</ShowNPC>
         <ShowMob>true</ShowMob>
         <ShowMarker>true</ShowMarker>
-        <ShowTargetLine>true</ShowTargetLine>
+        <ShowTargetLine>false</ShowTargetLine>
         <Ranges></Ranges>
     </global>
     <Enuri>
         <X>1562</X>
         <Y>1214</Y>
-        <Zoom>40</Zoom>
+        <Zoom>30</Zoom>
     </Enuri>
     <Eilwolf>
         <Zoom>35</Zoom>

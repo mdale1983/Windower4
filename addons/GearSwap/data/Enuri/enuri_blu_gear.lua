@@ -3,15 +3,15 @@ include('augments.lua')
 --  Field/Town Idle --
 ----------------------
 	sets.idle = {
-	    ammo="Impatiens",
+	    ammo="Staunch tathlum",
         head="Ayanmo zucchetto +1",
 		neck="Loricate torque",
-		ear1="Infused earring",
+		ear1="Hearty earring",
 		ear2="Loquacious Earring",
-		body="Qaaxo harness",
+		body="Emet harness +1",
 		hands=Herc.Hands.PDT,
-		ring1="Vertigo Ring",
-		ring2="Vocane Ring",
+		ring1="Vocane Ring",
+		ring2="Defending Ring",
         back="Solemnity cape",
 		waist="Flume Belt",
 		legs="Carmine Cuisses +1",

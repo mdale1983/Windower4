@@ -28,7 +28,9 @@ function user_setup()
     state.IdleMode:options('Normal', 'PDT')
 
     select_default_macro_book()
+	set_lockstyle()
 	set_healbot()
+	get_mpValue()
 end
 
 -- Define sets and vars used by this job file.
@@ -125,9 +127,17 @@ function job_update(cmdParams, eventArgs)
                 send_command('@input /ja "Afflatus Solace" <me>')
             end
         end
-    end
+    end 
 end
-
+function get_mpValue()
+local abil_recasts = windower.ffxi.get_ability_recasts()
+	if player.mp < 40 then 
+		send_command('@input /ja "Sublimation" <me>')
+	end 
+	if player.mp > 40 then 
+		send_command('@input /ja "Sublimation" <me>')
+	end 
+end 
 
 -- Function to display the current relevant user state when doing an update.
 function display_current_job_state(eventArgs)
@@ -144,10 +154,17 @@ function select_default_macro_book()
     -- Default macro set/book
     set_macro_page(1, 14)
 end
+	
+function set_lockstyle()
+    send_command('wait 2; input /lockstyleset 2')
+end
 function set_healbot()
-		send_command('wait 1; input //hb ignoretrusts off')
-		send_command('wait 1; input //hb mincure 1')
-		send_command('wait 1; input //hb follow Eilwolf')
+		send_command('wait 1; input //lua l healbot')
+		send_command('wait 2; input //hb ignoretrusts off')
+		send_command('wait 2; input //hb mincure 1')
+		--send_command('wait 2; input //hb follow Enuri')
+		send_command('wait 2; input //hb bufflist self Enurihel')
+
 		send_command('wait 4; input //hb ignore_debuff always Accuracy Down')
 		send_command('wait 4; input //hb ignore_debuff always Bind')
 		send_command('wait 4; input //hb ignore_debuff always Bio')
@@ -170,4 +187,4 @@ function set_healbot()
 		send_command('wait 4; input //hb ignore_debuff always Plague')
 		send_command('wait 4; input //hb ignore_debuff always Slow')
 		send_command('wait 4; input //hb ignore_debuff always Weight')
-	end	
+end	

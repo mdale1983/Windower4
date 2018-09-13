@@ -15,7 +15,7 @@ include('augments.lua')
 		back="Solemnity Cape",
 		waist="Flume Belt",
 		legs="Meghanada Chausses +1",
-		feet="Fajin Boots"
+		feet="Trotter boots"
 	}
          
     sets.idle.Regen = set_combine(sets.idle, {
@@ -366,4 +366,3 @@ include('augments.lua')
 	})
     sets.precast.WS['Exenterator'].TA = set_combine(sets.precast.WS['Exenterator'].SA, {})
     sets.precast.WS['Exenterator'].SATA = set_combine(sets.precast.WS['Exenterator'].SA, {})
-8

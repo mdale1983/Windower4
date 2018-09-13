@@ -4,7 +4,7 @@ include('augments.lua')
 ----------------------
 	sets.idle = {
 	    ammo="Staunch Tathlum",
-        head="Meghanada visor +1",
+        head="Futhark bandeau +1",
 		neck="Loricate torque",
 		ear1="Telos earring",
 		ear2="Hearty Earring",
@@ -58,7 +58,7 @@ include('augments.lua')
 		ring1="Odium ring",
 		ring2="Petrov ring",
 		back="Earthcry mantle",
-		waist="Goading Belt"
+		waist="Sulla belt"
 	}
 	sets.SIR = {
 		ammo="Impatiens", 			--10%
@@ -121,6 +121,22 @@ include('augments.lua')
 		hands="Futhark mitons"
 	})
 	sets.precast.JA['Provoke'] = set_combine(sets.Enmity, { })
+	sets.precast.JA['Ignis'] = sets.Enmity
+	sets.precast.JA['Gelus'] = sets.Enmity
+	sets.precast.JA['Flabra'] = sets.Enmity
+	sets.precast.JA['Tellus'] = sets.Enmity
+	sets.precast.JA['Sulpor'] = sets.Enmity
+	sets.precast.JA['Unda'] = sets.Enmity
+	sets.precast.JA['Lux'] = sets.Enmity
+	sets.precast.JA['Tenebrae'] = sets.Enmity
+	sets.midcast.JA = {}
+	sets.midcast.JA['Liement'] = sets.Enmity
+	sets.midcast.JA['Swordplay'] = sets.Enmity
+	sets.midcast.JA['Pflug'] = sets.Enmity
+	sets.midcast.JA['Rayke'] = sets.Enmity
+	sets.midcast.JA['Gambit'] = sets.Enmity
+	sets.midcast.JA['Valiance'] = sets.Enmity
+	sets.midcast.JA['Vallation'] = sets.Enmity
 ----------------------------------
 -- 	Pre-cast Magic Gear-sets 	--	
 ----------------------------------
@@ -174,29 +190,36 @@ include('augments.lua')
 		back="Solemnity cape",
 	})
 	sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.EnhancingDuration, {
+		ammo="Impatiens", 			--10%
 		head="Erilaz galea",
 		hands="Runeist mitons",
 		legs="Futhark trousers +1",
 		waist="Siegel sash",
 		neck="Incanter's torque",
+		ear1="Halasz earring",		--05%
+		ring1="Evanescence ring"
 		
 	})
 	sets.midcast.Flash = sets.Enmity
 	sets.midcast.BlueMagic = {
-		ammo="Staunch tathlum",
-		head="Rabid Visor",
+		head="Rabid visor",
 		body="Emet harness +1",
-		hands="Futhark Mitons", 
+		hands="Kurys gloves",
 		legs="Erilaz leg guards +1",
-		feet="Erilaz greaves +1",
-		neck="Unmoving collar",
-		waist="Ninurta's sash",
-		ear2="Ethereal Earring",
-		ear1="Loquac. Earring",
-		ring1="Kishar Ring",
-		ring2="Prolix Ring",
-		back="Mubvum. Mantle"
+		feet="Rager ledelsens +1",
+		ammo="Aqreaqa bomblet",
+		neck="Unmoving Collar",
+		ear1="Eris' earring",
+		ear2="Friomisi earring",
+		ring1="Odium ring",
+		ring2="Petrov ring",
+		back="Earthcry mantle",
+		waist="Sulla belt"
 	}
+	sets.midcast['Blank Gaze'] = sets.midcast.Enmity
+    sets.midcast['Geist Wall'] = sets.midcast.Enmity
+    sets.midcast['Jettatura'] = sets.midcast.Enmity
+    sets.midcast.Stun = sets.midcast.Flash
 	sets.midcast.BlueMagic.Cocoon = set_combine(sets.midcast['Enhancing Magic'], {
 		ammo="Staunch tathlum",
 		body="Emet harness +1",
@@ -274,23 +297,23 @@ include('augments.lua')
 	sets.engaged.TankHyb = set_combine(sets.engaged.PDT, {
 		ammo="Staunch Tathlum",
 		head="Meghanada Visor +1",
-		neck="Loricate Torque +1",
+		neck="Loricate Torque",
 		ear1="Telos Earring",
 		ear2="Sherida Earring",
-		body="Ayanmo corazza +1",
+		body="Ayanmo corazza +2",
 		hands=Herc.Hands.PDT,
 		ring1="Defending ring",
 		ring2="Vocane ring",
 		back="Ogma's cape",
 		waist="Ioskeha Belt +1",
-		legs="Meghanada Chausses +2",
+		legs="Meghanada Chausses +1",
 		feet=Herc.Feet.PDT
 	})
 	--Low DT with DD Gear
 	sets.engaged.DDHyb = {
 		ammo="Ginsen",
-		head="Meghanada visor +1",
-		body="Ayanmo corazza +1",
+		head="Ayanmo zucchetto +1",
+		body="Ayanmo corazza +2",
 		hands="Adhemar wristbands",
 		legs="Samnuha tights",
 		feet=Herc.Feet.WS,
@@ -300,7 +323,7 @@ include('augments.lua')
 		ring1="Rajas ring",
 		ring2="Chirich Ring",
 		back="Ogma's cape",
-		waist="Ioskeha Belt",
+		waist="Kentarch Belt +1",
 	}
 	--Mid DT with Acc
 	sets.engaged.DDHybAcc = {

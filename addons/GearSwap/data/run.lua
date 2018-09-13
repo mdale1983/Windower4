@@ -1,80 +1,135 @@
---[[
-
+--[[	    Rune Fencer V2.0
+    Created by: Enurihel of Asura
+     
+    This lua will automatically do the following based off triggers
+      [*]  while asleep and engaged equips Berserker's Torque
+      [*]  While weakened Equips Twilight Helm and Mail
+      [*]  Will auto cancel Souleater based off defined rules
+      [*]  Auto-cancel Hasso when Last Resort is active
+     
+    This lua will also auto detect whether you have Great Sword or Scythe 
+    equipped and equip the defined gear set based off that
+        Current Auto-detect weapons:
+            [*]Lionheart:    Uses engaged.Ragnarok
+            [*]Aettir:   Uses engaged.Caladbolg
+    Additional files needed
+        Mote-Include
+        CharName_run_gear (this will house your gear sets)
+            Additionally you can choose to house your augments 
+            at the top of your gear file or create another file 
+            to house your augments for all your jobs.
+    User Defined Modes
+		Idle Sets for Super Tanking
+			[*] PDT
+            [*] MagicEva
+            [*] Normal
+        Melee Hybrid Offense Mode
+            [*] TankHyb
+            [*] DDHyb
+            [*] DDHybAcc
+        Weaponskill Mode
+            [*]Normal
+            [*]Mid
+            [*]Acc
+        Casting modes
+            [*]Normal
+            [*]resistant
+            [*]enmity
+    Job ability Defined Modes
+        [*]Souleater mode (will auto toggle off Souleater)
+        [*]Last Resort (will auto toggle off when active)
+    Other aspects of this file 
+        [*]Capacity Mode - equip your CP mantle when engaged and Idle
+        [*]Equips Ygna's Resolve +1 while reive status is active 
+    Rune Fencer as a Job and Rune rules
+        While on RUN you will have the option to create 
+        and in game macro to cycle through the runes and display 
+        specific rune information
+            [*]/console gs c rune 
+            [*]/console gs c cycle runes
+            [*]/console gs c cycle rayke
+            [*]/console gs c cycle rune
+        if you want to create another macro to move backwards use 
+        the same as above just edit cycle to cycleback
 ]]
 ----------------------------------------------
 --  Initialization function required for    --
 --          this to work properly           --
 ----------------------------------------------
-	function get_sets()
+	function get_sets() 
 		mote_include_version = 2
-		
-		-- Load and initialize the include file.
 		include('Mote-Include.lua')
-	end
+	end 
 --------------------------
 --  Job Setup Section   --
 --------------------------
 	function job_setup()
 		state.CapacityMode = M(false, 'Capacity Point Mantle')
-		gsList = S{'Lionheart', 'Aettir', 'Zulfiqar'}
-		state.mainWeapon = M{'Lionheart', 'Aettir', 'Zulfiqar'}
+		state.Buff.Souleater = buffactive.souleater or false
+		state.Buff['Last Resort'] = buffactive['Last Resort'] or false
+		state.SouleaterMode = M(false, 'Soul Eater Mode')
+		state.LastResortMode = M(false, 'Last Resort Mode')
+		gsList = S{'Lionheart', 'Aettir'}
+		state.mainWeapon = M{'Lionheart', 'Aettir'}
 	--[[ Define the Weapon Skills that benefit from Moonshade Earring ]]
-		moonshade_WS = S{"Resolution", "Dimidiation", "Savage Blade", "Vorpal Blade", 
-						 "Requiescat", "Sanguine Blade"}
+		moonshade_WS = S{
+			"Resolution", "Dimidiation", "Savage Blade", "Vorpal Blade", 
+			"Requiescat", "Sanguine Blade"
+		}
+	--[[ Various form functions ]]
 		get_combat_form()
 		get_combat_weapon()
 		update_melee_groups()
 		define_rune_info()
-		function maps()
-	PhysicalSpells = S {
-		'Bludgeon', 'Body Slam', 'Feather Storm', 'Mandibular Bite', 
-		'Queasyshroom', 'Power Attack', 'Screwdriver', 'Sickle Slash', 
-		'Smite of Rage', 'Terror Touch', 'Battle Dance', 'Claw Cyclone',
-		'Foot Kick', 'Grand Slam', 'Sprout Smack', 'Helldive', 'Jet Stream',
-		'Pinecone Bomb', 'Wild Oats', 'Uppercut'
-	}
-	
-	BlueMagic_Buffs.Buffs = S {
-		'Refueling', 'Cocoon'
-	}
-
-	BlueMagic_Healing = S {
-		'Healing Breeze', 'Pollen', 'Wild Carrot'
-	}
-
-	BlueMagic_Enmity.Enmity = S { 
-		'Blank Gaze', 'Jettatura', 'Geist Wall', 
-		'Sheep Song', 'Soporific', 'Stinking Gas'
-	}
-	
-	RUNMagic_Enmity = S {
-		'Flash', 'Stun', 'Sleepga', 'Foil'
-	}
-end
+	--[[ Spell Sections ]]
+		BlueMagic = {}
+		blue_magic_maps = {}
+		blue_magic_maps.Physical = S {
+			'Bludgeon', 'Body Slam', 'Feather Storm', 'Mandibular Bite', 
+			'Queasyshroom', 'Power Attack', 'Screwdriver', 'Sickle Slash', 
+			'Smite of Rage', 'Terror Touch', 'Battle Dance', 'Claw Cyclone',
+			'Foot Kick', 'Grand Slam', 'Sprout Smack', 'Helldive', 'Jet Stream',
+			'Pinecone Bomb', 'Wild Oats', 'Uppercut'
+		}		
+		blue_magic_maps.Buff = S {
+			'Refueling', 'Cocoon'
+		}
+		blue_magic_maps.Healing = S {
+			'Healing Breeze', 'Pollen', 'Wild Carrot'
+		}
+		blue_magic_maps.Enmity = S { 
+			'Blank Gaze', 'Jettatura', 'Geist Wall', 
+			'Sheep Song', 'Soporific', 'Stinking Gas'
+		}
+		RUNMagic_Enmity = S {
+			'Flash', 'Stun', 'Sleepga', 'Foil'
+		}
+		absorbs = S{ 
+			'Absorb-STR', 'Absorb-DEX', 'Absorb-VIT', 'Absorb-AGI', 
+			'Absorb-INT', 'Absorb-MND', 'Absorb-CHR', 'Absorb-Attri', 
+			'Absorb-ACC', 'Absorb-TP'
+		}
 	end 
 --------------------------
 --  User Setup Section  --
 --------------------------
 	function user_setup()
-		state.OffenseMode:options('TankHyb', 'PDT', 'Magic')
-		--state.MagicEvaMode:Options('Magic', 'Normal')
-		state.IdleMode:options('PDT', 'Magic', 'Normal')
-		state.HybridMode:options ('None', 'DDHyb', 'DDHybAcc') 
-		state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
-		state.CastingMode:options('Normal', 'Resistant', 'Enmity')
+		state.OffenseMode:options('none', 'PDT', 'MagicEva')
+		state.IdleMode:options('Normal', 'PDT', 'MagicEva')
+		state.HybridMode:options('none', 'TankHyb', 'DDHyb')
+		state.WeaponskillMode:options('Normal', 'MidAcc', 'HighAcc')
 	--[[ Overriding default hot keys ]]
-		send_command('bind f12 gs c cycle OffenseMode')
+		--send_command('bind f12 gs c cycle OffenseMode')
 		send_command('bind f9 gs c cycle IdleMode')
+		send_command('bind f12 gs c cycle OffenseMode')
 		send_command('bind f10 gs c cycle HybridMode')      --F10
 		send_command('bind f11 gs c cycle WeaponskillMode') --F11
-		send_command('bind != gs c toggle CapacityMode')    --alt=
-		select_default_macro_book()
-		set_lockstyle()
-	--[[ User defined weapon swapping on the fly binds ]]
-		send_command('bind !f11 gs c set mainWeapon "Lionheart"')
-		send_command('bind !f12 gs c set mainWeapon "Aettir"')
-		send_command('bind @f10 gs c set mainWeapon "Zulfiqar"')
-	--[[ Section for Rune Fencer sub job to display which rune ]]    
+		send_command('bind != gs c toggle CapacityMode')    --alt=.
+		send_command('bind @f11 gs c set mainWeapon "Lionheart"') --Windows+f11
+		send_command('bind @f12 gs c set mainWeapon "Aettir"')
+		send_command('bind ^f9 gs c cycle SouleaterMode')
+		send_command('bind ^f10 gs c cycle LastResortMode')
+		--[[ Section for Rune Fencer sub job to display which rune ]]    
 		state.Runes = M{['description']='Rune', 
 			"Ignis", 
 			"Gelus", 
@@ -105,7 +160,10 @@ end
 			"Light", 
 			"Dark"
 		}
-	end
+	--[[ Loading other functions ]]
+		select_default_macro_book()
+		set_lockstyle()
+	end 
 --------------------------------------
 -- Elements for skillchain names    --
 --------------------------------------
@@ -194,7 +252,7 @@ end
 			idleSet = set_combine(idleSet,{body="Councilor's Garb"})
 		end
 		return idleSet
-	end
+	end 
 ------------------------------
 --  Custom melee Gearset    --
 ------------------------------
@@ -202,17 +260,26 @@ end
 		local abil_recasts = windower.ffxi.get_ability_recasts()	
 		if state.HybridMode.value == "DDHyb" then 
 			meleeSet = set_combine(meleeSet, sets.engaged.DDHyb)
-		elseif state.HybridMode.value == "DDHybAcc" then 
-			meleeSet = set_combine(meleeSet, sets.engaged.DDHybAcc)
-		elseif state.OffenseMode.value == "PDT" or state.OffenseMode.value == "Magic" then 
-			state.HybridMode:reset()
+			
+		elseif state.HybridMode.value == "TankHyb" then 
+			meleeSet = set_combine(meleeSet, sets.engaged.TankHyb)
+			
+		end 
+		if state.OffenseMode.value == "PDT" then 
+			meleeSet = set_combine(meleeSet, sets.idle.PDT)
+			add_to_chat(7,'Time to Turtle it up!')
+		elseif  state.OffenseMode.value == "MagicEva" then 
+			meleeSet = set_combine(meleeSet, sets.idle.Magic)
+			add_to_chat(7,'Setting gear selection to Magic Evasion')
 		end
-		if buffactive.Seigan and abil_recasts[133] == 0 then 
-				send_command('@wait 1.0; input /ja "Third Eye" <me>')
-			elseif buff == 'Hasso' then 
-				cancel_spell()
-			elseif not buffactive['Hasso'] and not buffactive['Seigan'] and not midaction() then 
-				send_command('@wait 1.0; input /ja "Hasso" <me>')
+		if player.sub_job == 'SAM' then 
+			if buffactive.Seigan and abil_recasts[133] == 0 then 
+					send_command('@wait 1.0; input /ja "Third Eye" <me>')
+				elseif buff == 'Hasso' then 
+					cancel_spell()
+				elseif not buffactive['Hasso'] and not buffactive['Seigan'] and not midaction() then 
+					send_command('@wait 1.0; input /ja "Hasso" <me>')
+			end
 		end
 		if state.Buff.Sleep and player.hp > 120 and player.status == "Engaged" then 
 		-- Equip Berserker's Torque When You Are Asleep
@@ -225,7 +292,7 @@ end
 			meleeSet = set_combine(meleeSet, sets.CapacityMantle)
 		end
 		return meleeSet
-	end
+	end	
 ----------------------------------------------
 --  General hooks for setting combat state  --
 ----------------------------------------------
@@ -235,7 +302,7 @@ end
     --  equipping of gear.                                          --
     ------------------------------------------------------------------
 	function job_status_change(newStatus, oldStatus, eventArgs)
-		 
+		
 	end
 	function job_update(cmdParams, eventArgs)
 		war_sj = player.sub_job == 'WAR' or false
@@ -256,11 +323,8 @@ end
 				equip({main="Aettir", sub="Refined grip +1"})
 				--set_macro_page(2, 6)
 		elseif state.mainWeapon.value == "Lionheart" then 
-				equip({main="Lionheart", sub="Bloodrain strap"})
+				equip({main="Lionheart", sub="Utu grip"})
 				--set_macro_page(3, 6)
-		elseif state.mainWeapon.value == "Zulfiqar" then 
-				equip({main="Zulfiqar", sub="Bloodrain strap"})
-				--set_macro_page(1, 6) 
 		end
 	end
 	function job_state_change(stateField, newValue, oldValue)
@@ -275,9 +339,9 @@ end
 --------------------------------------------------
 	function job_get_spell_map(spell, default_spell_map)
 		if spell.skill == 'Dark Magic' and absorbs:contains(spell.english) then
-			return 'Absorb'
+			return 'absorbs'
 		end
-	end
+	end	
 ----------------------
 -- Precast section  --
 ----------------------
@@ -399,14 +463,13 @@ end
 				handle_equipping_gear(player.status)
 			end
 		end
-		if buff == "Seigan" and player.status == 'Engaged' then
-			if gain then
-				send_command('@wait 1.0;input /ja "Third Eye" <me>')
-			elseif not midaction() then
-				send_command('@wait 1.0;input /ja "Hasso" <me>')
-			end
-		end
-	end
+		if state.LastResortMode.value == true then 
+			send_command('@wait 1; cancel Last Resort')
+		end 
+		if state.SouleaterMode.value == true then 
+			send_command('@wait 1; cancel Souleater')
+		end 
+	end 
 ----------------------------------
 --  Sub job section for Ninja   --
 ----------------------------------

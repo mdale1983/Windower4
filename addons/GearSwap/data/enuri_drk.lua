@@ -1,4 +1,4 @@
---[[    DARK KNIGHT V2.0
+--[[    DARK KNIGHT V3.0
     Created by: Enurihel of Asura
     Based off AlanWarren's GearSwap file
      
@@ -76,7 +76,28 @@
 --------------------------
 --  Job Setup Section   --
 --------------------------
-function job_setup()
+	function binds_on_load()
+	--[[ F9-F12 ]]
+		send_command('bind f9 gs c cycle IdleMode')
+		send_command('bind f10 gs c cycle OffenseMode')
+		send_command('bind f11 gs c cycle HybridMode')
+		send_command('bind f12 gs c cycle CastingMode')
+	--[[ ALT F9-12 ]]
+		send_command('bind !f9 gs c update user')
+		send_command('bind !f10 gs c cycle RangedMode')
+		send_command('bind !f11 gs c cycle WeaponskillMode')
+		send_command('bind !f12 gs c cycle Kiting')
+	--[[ Windows Key F9-F12]]
+		--[[ User defined weapon swapping on the fly binds ]]
+		send_command('bind @f10 gs c set mainWeapon "Apocalypse"')
+		send_command('bind @f11 gs c set mainWeapon "Ragnarok"')
+		send_command('bind @f12 gs c set mainWeapon "Caladbolg"')
+	--[[ Misc. Section for CP and other junk ]]
+		send_command('bind != gs c toggle CapacityMode')    --alt=.
+		send_command('bind ^f9 gs c cycle SouleaterMode')
+		send_command('bind ^f10 gs c cycle LastResortMode')
+	end 
+	function job_setup()
 		state.Buff.Souleater = buffactive.souleater or false
 		state.Buff['Last Resort'] = buffactive['Last Resort'] or false
 	--[[ Set the default to false if you'd rather SE always stay active ]]
@@ -95,35 +116,27 @@ function job_setup()
 		}
 	--[[ Define the Weapon Skills that benefit from Moonshade Earring ]]
 		moonshade_WS = S{
-			"Resolution", "Torcleaver", "Cross Reaper", "Quietus", 
+			"Resolution", "Torcleaver", "Catastrophe", "Cross Reaper", "Quietus", 
 			"Entropy", "Insurgency", "Savage Blade", "Vorpal Blade", 
 			"Requiescat", 'Sanguine Blade'
 		}
+	--[[ Define Low tier Nukes Tier III and below spells ]]
+		LowTierNuke = S{
+			'Stone', 'Water', 'Aero', 'Fire', 'Blizzard', 'Thunder',
+			'Stone II', 'Water II', 'Aero II', 'Fire II', 'Blizzard II', 'Thunder II',
+			'Stone III', 'Water III', 'Aero III', 'Fire III', 'Blizzard III', 'Thunder III', 'Stonega', 'Waterga', 'Aeroga', 'Firaga', 'Blizzaga', 'Thundaga', 'Stonega II', 'Waterga II', 'Aeroga II', 'Firaga II', 'Blizzaga II', 'Thundaga II'
+		}
 		gav_ws = S{"Torcleaver","Resolution","Catastrophe","Scourge","Cross Reaper"}
-		get_player_hp()
-		job_update()
 	end 
 --------------------------
 --  User Setup Section  --
 --------------------------
 	function user_setup()
 		state.OffenseMode:options('Normal', 'Mid', 'Acc')
-		state.HybridMode:options ('Normal', 'DT', 'Reraise') 
+		state.HybridMode:options ('Normal', 'DT', 'Reraise')
 		state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
 		state.CastingMode:options('Normal', 'Resistant', 'Enmity')
-	--[[ Overriding default hot keys ]]
-		send_command('bind f10 gs c cycle HybridMode')      --F10
-		send_command('bind f11 gs c cycle WeaponskillMode') --F11
-		send_command('bind != gs c toggle CapacityMode')    --alt=
-		send_command('bind @f9 gs c toggle SouleaterMode')  --windowsKey+F9
-		send_command('bind f12 gs c cycle CastingMode')     --F12
-	--[[ Additional User Defined Settings ]]
-		select_default_macro_book()
-		set_lockstyle()
-	--[[ User defined weapon swapping on the fly binds ]]
-		send_command('bind @f11 gs c set mainWeapon "Ragnarok"')
-		send_command('bind @f12 gs c set mainWeapon "Caladbolg"')
-		send_command('bind @f10 gs c set mainWeapon "Apocalypse"')
+		state.IdleMode:options('Normal', 'PDT', 'MagicEva')
 	--[[ Section for Rune Fencer sub job to display which rune ]]    
 		state.Runes = M{['description']='Rune', 
 			"Ignis", 
@@ -145,20 +158,41 @@ function job_setup()
 			"Light Dmg | Dark Resist's: Blind, Bio, Sleep", 
 			"Dark Dmg | Light Resist's: Repose, Dia, Charm"
 		}
+		state.Rune2 = M{['description']='which', 
+			"Fire", 
+			"Ice", 
+			"Wind", 
+			"Earth", 
+			"Lightning", 
+			"Water", 
+			"Light", 
+			"Dark"
+		}
+	--[[ Loading of other Functions within the Lua ]]
+		--[[ Additional User Defined Settings ]]
+		select_default_macro_book()
+		set_lockstyle()
+		get_player_name()
+		get_combat_form()
+		get_player_hp()
+		job_update()
 	end
+	function get_player_name()
+		if windower.ffxi.get_player() then 
+			self = windower.ffxi.get_player().name
+			roll = windower.ffxi.get_player().main_job_full
+			windower.add_to_chat(7,'Hello '..self..' Your '..roll..' LUA is now loaded')
+			windower.add_to_chat(7,'The gerbils are fetching your '..roll..'  Lockstyle')
+		end
+	end 
 --------------------------------------------------
 --  This section is called when you change jobs --
---------------------------------------------------
+--------------------------------------------------	
 	function file_unload()
-		send_command('unbind ^`')
-		send_command('unbind !=')
-		send_command('unbind ^[')
-		send_command('unbind ![')
-		send_command('unbind @f9')
-		send_command('unbind @f10')
-		send_command('unbind @f11')
-		send_command('unbind @f12')
-	end		
+		if binds_on_unload then
+			binds_on_unload()
+		end
+	end
 ----------------------------------------------
 --  This tells Gear swap what sets to fetch  --
 --  Recommend creating a Car file.          --
@@ -170,16 +204,16 @@ function job_setup()
 -- Checking Player HP for Hybird modes --	
 -----------------------------------------
 	function get_player_hp()  
-		if windower.ffxi.get_player().vitals.hpp < 50 then 
+		if player.hpp <= 50 then 
 			send_command('gs c set HybridMode "Reraise"')
-		end 
-		if windower.ffxi.get_player().vitals.hpp > 51 then 
+			add_to_chat(7,'Death is iminent your hp is at '..player.hpp..'% setting Reraise set!')
+		elseif player.hpp > 50 then 
 			send_command('gs c set HybridMode "Normal"')
 		end
 	end 
 ---------------------------
 --  Custom Idle Gear set --
----------------------------		
+---------------------------
 	function customize_idle_set(idleSet)
 		if state.HybridMode.value == "DT" then 
 			idleSet = set_combine(idleSet, sets.DT)
@@ -187,7 +221,7 @@ function job_setup()
 		end 
 		if state.HybridMode.value == "Reraise" then 
 			idleSet = set_combine(idleSet, sets.Reraise)
-			add_to_chat(8, '*Danger Low HP -- equiping Reraise set*')
+			add_to_chat(7,'DT value is at 46% with Re-raise set on')
 		end 
 		if player.mpp < 50 then 
 			idleSet = set_combine(idleSet, sets.latentRefresh)
@@ -204,10 +238,9 @@ function job_setup()
 		if buffactive['Weakness'] then 
 			equip({head="Twilight helm", body="Twilight mail"})
 			disable('Head', 'Body')
-			add_to_chat(8, 'Weakness detected - blocking Helm and Body')
+			add_to_chat(8, 'Weakness detected - Locking Helm and Body')add_to_chat(8, 'Weakness detected - blocking Helm and Body')
 			else 
 			enable('Head', 'Body')
-			add_to_chat(8, 'Weakness no longer detected - Un-blocking Helm and Body')
 		end 
 		if state.CapacityMode.value then 
 			idleSet = set_combine(idleSet, sets.CapacityMantle)
@@ -221,21 +254,20 @@ function job_setup()
 --  Custom Melee Gear set    --
 -------------------------------
 	function customize_melee_set(meleeSet)
+		if player.hpp < 50 then 
+			state.HybridMode:set('DT')
+			add_to_chat(7'Your HP percent is '..player.hpp..' Equiping DT set')
+		end 
 		if state.HybridMode.value == "DT" then 
 			meleeSet = set_combine(meleeSet, sets.DT)
-			add_to_chat(8, '*Danger Low HP -- equiping DT set*')
+			add_to_chat(8, '*Danger Low HP is at'..player.hpp..'equiping DT set*')
 		end 
-		if state.HybridMode.value == "Reraise" then 
-			meleeSet = set_combine(meleeSet, sets.Reraise)
-			add_to_chat(8, '*Danger Low HP -- equiping Reraise set*')
-		end
 		if buffactive['Weakness'] then 
 			equip({head="Twilight helm", body="Twilight mail"})
 			disable('Head', 'Body')
 			add_to_chat(8, 'Weakness detected - blocking Helm and Body')
 			else 
 			enable('Head', 'Body')
-			add_to_chat(8, 'Weakness no longer detected - Un-blocking Helm and Body')
 		end
 		if state.Buff['Souleater'] then
 			meleeSet = set_combine(meleeSet, sets.buff.Souleater)
@@ -256,7 +288,7 @@ function job_setup()
     --  Set eventArgs.handled to true if we don't want automatic    --
     --  equipping of gear.                                          --
     ------------------------------------------------------------------
-		function job_update(cmdParams, eventArgs)
+	function job_update(cmdParams, eventArgs)
 			job_status_change()
 			get_combat_form()
 			get_combat_weapon()
@@ -264,20 +296,7 @@ function job_setup()
 			update_melee_groups()
 		end
 		function job_status_change(newStatus, oldStatus, eventArgs)
-			if newStatus == "Engaged" then
-				-- handle weapon sets
-				if gsList:containsplayer.equipment.main) then
-					state.CombatWeapon:set('GreatSword')
-				elseif scytheList:containsplayer.equipment.main) then
-					state.CombatWeapon:set('Engaged')
-				elseif player.equipment.main == 'Ragnarok' then
-					state.CombatWeapon:set('Ragnarok')
-				elseif player.equipment.main == 'Apocalypse' then
-					state.CombatWeapon:set('Apocalypse')
-				elseif player.equipment.main == 'Caladbolg' then
-					state.CombatWeapon:set('Caladbolg')
-				end
-			end 
+			 
 		end
 		function get_combat_form()
 			if buffactive['Last Resort'] and buffactive.haste then 
@@ -290,17 +309,15 @@ function job_setup()
 			------------------------------------------------------
 		end
 		function get_combat_weapon()
-			if state.mainWeapon.value == 'Ragnarok' then 
-				equip({main="Ragnarok"})
-				set_macro_page(3, 6)
-			end 
-			if state.mainWeapon.value == "Caladbolg" then 
-				equip({main="Caladbolg"})
-				set_macro_page(1, 6)
-			end 
 			if state.mainWeapon.value == "Apocalypse" then 
-				equip({main="Apocalypse"})
+				equip({main="Apocalypse", sub="Utu grip"})
 				set_macro_page(2, 6)
+			elseif state.mainWeapon.value == "Ragnarok" then 
+				equip({main="Ragnarok", sub="Utu grip"})
+				set_macro_page(3, 6)
+			elseif state.mainWeapon.value == "Caladbolg" then 
+				equip({main="Caladbolg", sub="Utu strap"})
+				set_macro_page(1, 6) 
 			end
 			if gsList:contains(player.equipment.main) then
 				state.CombatWeapon:set("GreatSword")
@@ -313,8 +330,9 @@ function job_setup()
 			elseif player.equipment.main == 'Caladbolg' then
 				state.CombatWeapon:set('Caladbolg')
 			else -- use regular set, which caters to Liberator
-				state.CombatWeapon:reset()
-			end			
+				--state.CombatWeapon:reset()
+			end	
+			return get_combat_weapon
 		end
 		function job_state_change(stateField, newValue, oldValue)
 			--nothing added in here
@@ -347,21 +365,35 @@ function job_setup()
 			return 'Absorb'
 		end
 	end	
+-------------------------
+-- Pre-target section  --
+-------------------------
+	function job_pretarget(spell, action, spellMap, eventArgs)
+		if spell.type:endswith('Magic') and buffactive.silence then
+			eventArgs.cancel = true
+			send_command('input /item "Echo Drops" <me>')
+		end
+	end
 -----------------------
 -- Pre-cast section  --
 -----------------------
+	function job_precast(spell, action, spellMap, eventArgs)
+
+	end
 	function job_post_precast(spell, action, spellMap, eventArgs)
-		if spell.type == 'WeaponSkill' then
-			if world.time >= 17*60 or world.time < 7*60 then -- Dusk to Dawn time.
-				equip({ear1="Lugra Earring +1", ear2="Lugra Earring"})
+		if state.OffenseMode.value == "Normal" then 
+			if spell.type == 'WeaponSkill' then
+				if world.time >= 17*60 or world.time < 7*60 then -- Dusk to Dawn time.
+					equip({ear1="Lugra Earring +1", ear2="Lugra Earring"})
+				end
 			end
-		end
+		end 
 		if spell.action_type=="Magic" and buffactive.Silence then
 			eventArgs.cancel = true
 			send_command('input /item "Echo Drops" <me>')
 		end
 		if spell.type=='WeaponSkill' then
-			if moonshade_WS:contains(spell.english) and player.tp < 2900 then
+			if moonshade_WS:contains(spell.english) and player.tp < 2850 then
 				equip({ear2="Moonshade Earring"})
 			end
 		end
@@ -370,6 +402,7 @@ function job_setup()
 			if spell.target.distance > 5 then 
 				cancel_spell()
 				add_to_chat(8, 'Target to far away. Move closer')
+				--send_command('input /tell Gardon MOVE CLOSER')
 				return
 			end 
 		end 
@@ -377,6 +410,9 @@ function job_setup()
 -----------------------
 --  Mid-cast Section --
 -----------------------
+	function job_midcast(spell, action, spellMap, eventArgs)
+	 
+	end
 	function job_post_midcast(spell, action, spellMap, eventArgs)
 		if spell.skill == 'Elemental Magic' then
 			if spell.element == world.day_element or spell.element == world.weather_element then
@@ -387,120 +423,27 @@ function job_setup()
 			if gav_ws:contains(spell.english) and (spell.element==world.day_element or spell.element==world.weather_element) then
 				equip({head="Gavialis Helm"})
 			end
-		end 
+		end
+		if buffactive['Dark Seal'] and S{"Drain III"}:contains(spell.english)then
+			equip({head="Fallen's Burgeonet"})
+		end
 	end	
+-------------------------
+--  After-cast Section --
+-------------------------
+	function job_aftercast(spell, action, spellMap, eventArgs)
+	 
+	end
+	function job_post_aftercast(spell, action, spellMap, eventArgs)
+
+	end
 ------------------------------------------------------------------
 -- Called when a player gains or loses a buff.                  --
 -- buff == buff gained or lost                                  --
 -- gain == true if the buff was gained, false if it was lost.   --
-------------------------------------------------------------------	
+------------------------------------------------------------------		
 	function job_buff_change(buff, gain)
-		if state.Buff[buff] ~= nil then
-			state.Buff[buff] = gain
-			handle_equipping_gear(player.status)
-		end
-		if buff:lower()=='terror' or buff:lower()=='petrification' or buff:lower()=='stun' then
-			if gain then
-				equip(sets.defense.DT)
-				add_to_chat(8, 'DT set is equiped')
-			elseif not gain then 
-				handle_equipping_gear(player.status)
-			end
-		end
-		if buff:lower()=='sleep' then
-			if gain and player.hp > 120 and player.status == "Engaged" then 
-			-- Equip Berserker's Torque / Frenzy Sallet While You Are Asleep
-				equip(sets.Asleep)
-			elseif not gain then 
-			-- Remove Berserker's Torque / Frenzy Sallet
-				handle_equipping_gear(player.status)
-			end
-		end
-		if buffactive['Reive Mark'] then
-			equip(sets.Reive)
-			disable('neck')
-			else
-				enable('neck')
-		end
-		if buffactive['Souleater'] then
-			equip({head="Ignominy Burgonet +1"})
-			disable('Head')
-			add_to_chat(100,'WARNING: Souleater set equiped.')
-			else
-				enable('Head')
-		end
-		if buffactive['Blood Weapon'] and buffactive['Souleater'] and player.hp > 8000 then
-			equip({main="Dacnomania", head="Ignominy Burgonet +1"})
-			disable('Head')
-			--add_to_chat(100,'WARNING: SOUL EATER HEAD ON AND &&&& Dacnomania.')
-			else
-				enable('Head')
-		end
-		if buff == "doom" then
-			if gain then           
-				equip(sets.buff.Doom)
-				--send_command('@input /p Doomed please cursna.')
-				send_command('@input /item "Holy Water" <me>')
-				disable('ring1','ring2','waist')
-			else
-				enable('ring1','ring2','waist')
-				handle_equipping_gear(player.status)
-			end
-		end
-	--[[ Checks if Last resort is active if so cancels Hasso, 
-		 will put Hasso back on after Last Resort falls off. ]]
-		if buff == "Last Resort" and player.status == 'Engaged' then
-			if gain then
-				send_command('@wait 1.0;cancel hasso')
-			elseif not midaction() then
-				send_command('@wait 1.0;input /ja "Hasso" <me>')
-			end
-		end
-	--[[ Drain II HP Boost. Set SE to stay on. ]]
-		if buff == "Max HP Boost" and state.SouleaterMode.value then
-			if gain or buffactive['Max HP Boost'] then
-				state.SouleaterMode:set(false)
-			else
-				state.SouleaterMode:set(true)
-			end
-		end
-	--[[ Make sure SE stays on for BW	]]
-		if buff == 'Blood Weapon' and state.SouleaterMode.value then
-			if gain or buffactive['Blood Weapon'] then
-				state.SouleaterMode:set(false)
-			else
-				state.SouleaterMode:set(true)
-			end
-		end
-	--[[ AM custom groups	]]
-		if buff:startswith('Aftermath') then
-			if player.equipment.main == 'Liberator' then
-				classes.CustomMeleeGroups:clear()
-				if (buff == "Aftermath: Lv.3" and gain) or buffactive['Aftermath: Lv.3'] then
-					classes.CustomMeleeGroups:append('AM3')
-					add_to_chat(8, '-------------AM3 UP-------------')
-				end
-				if not midaction() then
-					handle_equipping_gear(player.status)
-				end
-			else
-				classes.CustomMeleeGroups:clear()
-			if player.equipment.main == "Apocalypse" then
-				if buff == "Aftermath" and gain or buffactive.Aftermath then
-					classes.CustomMeleeGroups:append('AM')
-					add_to_chat(8, '--Apocalypse haste is active. Switching to AM set--')
-				end 
-			end
-			if player.equipment.main == 'Ragnarok' then 
-				if buff == 'Aftermath' and gain then 
-					add_to_chat(8, '---Ragnarok AM active providing Crit---')
-				end 
-			end 
-				if not midaction() then
-					handle_equipping_gear(player.status)
-				end
-			end
-		end
+	
 	end 
 ----------------------------------
 --  Sub job section for Ninja   --
@@ -518,6 +461,9 @@ function job_setup()
 		} 
 	function job_precast(spell, action, spellMap, eventArgs)
 		if spell.type=="Ninjutsu" then check_tools(spell) end
+		if spell.english == 'Catastrophe' then
+			send_command('@wait 4; input //send Enuriel /ws "Leaden Salute" <t> ')
+		end
 	end
 	  
 	function check_tools(spell)
@@ -578,4 +524,29 @@ function job_setup()
 	end
 	function set_lockstyle()
 		send_command('wait 4; input /lockstyleset 1')
-	end
+	end	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

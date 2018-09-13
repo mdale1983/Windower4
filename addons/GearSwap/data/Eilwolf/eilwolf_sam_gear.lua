@@ -12,8 +12,8 @@ include('augments.lua')
 		waist="Flume Belt",
 		left_ear="Cessance Earring",
 		right_ear="Telos Earring",
-		ring1="Defending Ring",
-		RING2="Vocane Ring",
+		ring1="Warp Ring",
+		ring2="Defending Ring",
 		back="Solemnity cape",
 		ammo="Staunch Tathlum"
 	}
@@ -54,7 +54,7 @@ include('augments.lua')
 			waist="Ioskeha Belt",
 			ear1="Cessance Earring",
 			ear2="Telos Earring",
-			Ring1="Flamma Ring",
+			Ring1="Regal Ring",
 			ring2="Chirich ring",
 			back="Smertrios's Mantle",
 	}

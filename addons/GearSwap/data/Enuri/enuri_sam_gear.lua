@@ -4,7 +4,7 @@ include('augments.lua')
 ----------------------
 	sets.idle = {
 	    head="Rabid visor",
-		body="Emet Harness +1",
+		body="Wakido domaru +2",
 		hands="Kurys glvoes",
 		legs=Valor.Legs.TP,
 		feet="Danzo Sune-Ate",
@@ -31,7 +31,8 @@ include('augments.lua')
 	sets.precast.JA['Blade Bash'] = set_combine(sets.precast.JA, {hands="Sakonji Kote +2"})
 	sets.precast.JA['Meikyo Shisui'] = set_combine(sets.precast.JA, {})
 	sets.precast.JA['Hasso'] = set_combine(sets.precast.JA, {
-		hands = "Wakido kote"
+		hands = "Wakido kote +2",
+		legs = "Kasuga haidate +1"
 	})
 	sets.precast.JA['Sengikori'] = set_combine(sets.precast.JA, {})
 ---------------
@@ -47,32 +48,31 @@ include('augments.lua')
 			ammo="Ginsen",
 			head="Flam. Zucchetto +2",
 			body=Valor.Body.TP,
-			hands=Valor.Hands.TP,
-			legs="Wakido Haidate +2",
+			hands="Wakido kote +2",
+			legs="Ryuo Hakama",
 			feet="Flamma gambieras +2",
-			neck="Lissome necklace",
+			neck="Moonbeam nodowa",
 			waist="Ioskeha Belt",
 			ear1="Cessance Earring",
 			ear2="Telos Earring",
 			Ring1="Flamma Ring",
 			ring2="Chirich ring",
-			back="Smertrios's Mantle",
+			back=Smert.TP
 	}
-	sets.engaged.MedAccuracy = {
+	sets.engaged.Mid = {
 	    ammo="Ginsen",
-		head="Flam. Zucchetto +2",
-		body="Ken. Samue +1",
-		-- hands={ name="Valorous Mitts", augments={'Accuracy+13 Attack+13','CHR+5','Quadruple Attack +3','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
-		hands="Wakido Kote +3",
-		legs="Wakido Haidate +3",
-		feet="Flam. Gambieras +2",
-		neck="Moonbeam Nodowa",
-		waist="Ioskeha Belt",
-		left_ear="Cessance Earring",
-		right_ear="Telos Earring",
-		left_ring="Niqmaddu Ring",
-		right_ring="Regal Ring",
-		back={ name="Takaha Mantle", augments={'STR+4','"Zanshin"+1','"Store TP"+2','Meditate eff. dur. +6',}},
+			head="Flam. Zucchetto +2",
+			body=Valor.Body.TP,
+			hands="Wakido kote +2",
+			legs="Wakido haidate +2",
+			feet="Flamma gambieras +2",
+			neck="Moonbeam nodowa",
+			waist="Ioskeha Belt",
+			ear1="Cessance Earring",
+			ear2="Telos Earring",
+			Ring1="Flamma Ring",
+			ring2="Chirich ring",
+			back=Smert.TP
 	}
 	sets.engaged.HighAccuracy = {
 	    head="Wakido Kabuto +3",
@@ -80,7 +80,7 @@ include('augments.lua')
 		hands="Wakido Kote +3",
 		legs="Wakido Haidate +3",
 		feet="Flam. Gambieras +2",
-		neck="Moonbeam Nodowa",
+		neck="Souveran handschuhs +1",
 		waist="Ioskeha Belt",
 		left_ear="Cessance Earring",
 		right_ear="Telos Earring",
@@ -100,14 +100,29 @@ include('augments.lua')
 		body="Nzingha cuirass",
 		hands=Valor.Hands.WS,
 		legs="Wakido Haidate +2",
-		feet="Loyalist sabatons",
+		feet=Valor.Feet.TP,
 		neck="Fotia gorget",
 		waist="Fotia belt",
 		ear1="Ishvara earring",
 		ear2="Brutal earring",
 		ring1="Regal ring",
 		ring2="Shukuyu ring",
-		back="Smertrios's mantle"
+		back=Smert.WS
+	}
+	sets.precast.WS.Mid = {
+		ammo="Knobkierrie",
+		head=Valor.Head.WS,
+		body=Valor.Body.TP,
+		hands=Valor.Hands.WS,
+		legs="Wakido Haidate +2",
+		feet=Valor.Feet.TP,
+		neck="Fotia gorget",
+		waist="Fotia belt",
+		ear1="Ishvara earring",
+		ear2="Brutal earring",
+		ring1="Regal ring",
+		ring2="Shukuyu ring",
+		back=Smert.WS
 	}
 	sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, { 
 	-- Magic Accuracy
@@ -135,11 +150,13 @@ include('augments.lua')
 		ear2="Brutal earring",
 		ring1="Regal ring",
 		ring2="Shukuyu ring",
-		back=""		
+		back=Smert.WS		
 	})
-	sets.precast.WS['Tachi: Fudo'] = set_combine( sets.precast.WS, {
+	sets.precast.WS['Tachi: Fudo'] = sets.precast.WS
+	sets.precast.WS.Mid['Tachi: Fudo'] = sets.precast.WS.Mid
+	sets.precast.WS['Tachi: Shoha'] = sets.precast.WS
+	sets.precast.WS.Mid['Tachi: Shoha'] = sets.precast.WS.Mid
 	
-	})
 ----------------------
 -- 	Misc Gear-sets 	--
 ----------------------
