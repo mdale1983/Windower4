@@ -9,7 +9,7 @@ console_chatopen 1
 console_screendir screenshots
 
 //Set game variables
-game_forceambientlight 0
+game_forceambientlight 1
 game_ambientlight 255 120 120 120
 game_gamma 50
 game_allowsetcursorpos 0
@@ -21,7 +21,7 @@ game_allowresize 0
 showfps 1
 // FPS Position - Use -75 1 to position it on the top right corner.
 //fps_position 5 5 //top left
-fps_position -75 1 //top right
+fps_position 2030 1 //top right
 
 drawdistance set 10
 //Bind keys
@@ -29,11 +29,11 @@ drawdistance set 10
 // ^ represents control- and ! is alt, eg !1 is alt-1
 bind !f10 drawdistance set 10
 bind ^f10 drawdistance set 1
-//bind delete game_forceambientlight
+bind f11 game_forceambientlight
 bind f12 showfps
 bind sysrq screenshot png hide
 bind ^v paste
-//echo Toggle Lighting = delete (Bump mapping must be off to work properly)
+echo Toggle Lighting = F11 (Bump mapping must be off to work properly)
 echo Toggle FPS = F12
 echo DrawDistance Lv 10: Alt-F10
 echo DrawDistance Lv 1: Ctrl-F10

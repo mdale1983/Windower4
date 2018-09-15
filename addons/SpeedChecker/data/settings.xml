@@ -17,8 +17,8 @@
         </flags>
         <padding>0</padding>
         <pos>
-            <x>1250</x>
-            <y>890</y>
+            <x>1533</x>
+            <y>1159</y>
         </pos>
         <text>
             <alpha>255</alpha>
@@ -45,12 +45,6 @@
             <y>1218</y>
         </pos>
     </eilwolf>
-    <enuri>
-        <pos>
-            <x>1533</x>
-            <y>1159</y>
-        </pos>
-    </enuri>
     <enuriel>
         <pos>
             <x>1350</x>

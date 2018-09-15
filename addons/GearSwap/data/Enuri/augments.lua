@@ -182,7 +182,7 @@
     ------------------
     Odyssean.Helm.VitWS = {
 		name="Odyssean Helm", 
-		augments={'Accuracy+23','Weapon skill damage +1%','VIT+5','Attack+14'}
+		augments={'Attack+28','Weapon skill damage +4%','Accuracy+12'}
 	}
     ------------------
     --  Odyss. Body --
@@ -208,7 +208,7 @@
     }
 	Odyssean.Hands.VitWS = {
 		name="Odyssean gauntlets",
-        augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','VIT+5'} 
+        augments={'Accuracy+17 Attack+17','Weapon skill damage +3%','Accuracy+7','Attack+11'} 
 	}
     ------------------
     --  Odyss. Legs --
@@ -223,7 +223,7 @@
     }
 	Odyssean.Legs.VitWS = {
 		name="Odyssean Cuisses", 
-		augments={'Accuracy+14','Weapon skill damage +2%','VIT+10','Attack+8'}
+		augments={'Accuracy+17 Attack+17','Weapon skill damage +5%','Accuracy+9','Attack+10'}
 	}
     ------------------
     --  Odyss. Feet --

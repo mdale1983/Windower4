@@ -5,38 +5,142 @@
 	</global>
 	<Enuri> <!-- This is just an example. You need to replace "YourName" to the left and below with the character name that you want the set of plugins to work for. -->
 	<!-- Plugin Section -->
+		<plugin>Config</plugin>
+		<plugin>DelayMeNot</plugin>
+		<plugin>FFXIDB</plugin>
+		<plugin>Guildwork</plugin>
+		<plugin>InfoBar</plugin>
+		<plugin>JaZero</plugin>
+		<plugin>LightLuggage</plugin>
+		<plugin>Sandbox</plugin>
 		<plugin>Timers</plugin>
 	<!-- Addon Section -->
+		<addon>Aecho</addon>
+		<addon>Anchor</addon>
+		<addon>autojoin</addon>
+		<addon>battlemod</addon>
+		<addon>boxdestroyer</addon>
+		<addon>cancel</addon>
+		<addon>checkparam</addon>
+		<addon>clock</addon>
+		<addon>ConsoleBG</addon>
+		<addon>Debuffed</addon>
+		<addon>DistancePlus</addon>
+		<addon>DressUp</addon>
+		<addon>dynamishelper</addon>
+		<addon>findAll</addon>
+		<addon>Gearswap</addon>
+		<addon>giltracker</addon>
+		<addon>homepoint</addon>
+		<addon>healbot</addon>
+		<addon>InfoBar</addon>
+		<addon>instaLS</addon>
+		<addon>invtracker</addon>
+		<addon>itemizer</addon>
+		<addon>lottery</addon>
+		<addon>Omen</addon>
+		<addon>Organizer</addon>
+		<addon>pointwatch</addon>
+		<addon>reive</addon>
+		<addon>request</addon>
+		<addon>rolltracker</addon>
+		<addon>React</addon>
 		<addon>scoreboard</addon>
 		<addon>send</addon>
-		<addon>battlemod</addon>
-		<addon>Anchor</addon>
-		<addon>React</addon>
-		<addon>Gearswap</addon>
-		<addon>Dressup</addon>
+		<addon>shortcuts</addon>
+		<addon>silence</addon>
+		<addon>SpeedChecker</addon>
+		<addon>targetinfo</addon>
+		<addon>temps</addon>
+		<addon>thtracker</addon>
+		<addon>timestamp</addon>
+		<addon>TParty</addon>
+		<addon>Treasury</addon>
+		<addon>Trusts</addon>
 	</Enuri>
-	<Eilwolf> <!-- This is just an example. You need to replace "YourName" to the left and below with the character name that you want the set of plugins to work for. -->
+	<Enuriel> <!-- This is just an example. You need to replace "YourName" to the left and below with the character name that you want the set of plugins to work for. -->
 	<!-- Plugin Section -->
+		<plugin>Config</plugin>
+		<plugin>DelayMeNot</plugin>
+		<plugin>FFXIDB</plugin>
+		<plugin>Guildwork</plugin>
+		<plugin>InfoBar</plugin>
+		<plugin>JaZero</plugin>
+		<plugin>LightLuggage</plugin>
+		<plugin>Sandbox</plugin>
 		<plugin>Timers</plugin>
 	<!-- Addon Section -->
-		<addon>scoreboard</addon>
-		<addon>send</addon>
-		<addon>battlemod</addon>
+		<addon>Aecho</addon>
 		<addon>Anchor</addon>
-		<addon>React</addon>
+		<addon>autojoin</addon>
+		<addon>battlemod</addon>
+		<addon>cancel</addon>
+		<addon>ConsoleBG</addon>
+		<addon>DistancePlus</addon>
+		<addon>DressUp</addon>
+		<addon>findAll</addon>
 		<addon>Gearswap</addon>
-		<addon>Gametime</addon>
-		
-	</Eilwolf>
+		<addon>giltracker</addon>
+		<addon>homepoint</addon>
+		<addon>healbot</addon>
+		<addon>invtracker</addon>
+		<addon>itemizer</addon>
+		<addon>lottery</addon>
+		<addon>Organizer</addon>
+		<addon>pointwatch</addon>
+		<addon>request</addon>
+		<addon>rolltracker</addon>
+		<addon>React</addon>
+		<addon>send</addon>
+		<addon>shortcuts</addon>
+		<addon>silence</addon>
+		<addon>SpeedChecker</addon>
+		<addon>temps</addon>
+		<addon>timestamp</addon>
+		<addon>TParty</addon>
+		<addon>Treasury</addon>
+		<addon>Trusts</addon>
+	</Enuriel>
 	<Enurihel> <!-- This is just an example. You need to replace "YourName" to the left and below with the character name that you want the set of plugins to work for. -->
 	<!-- Plugin Section -->
+		<plugin>Config</plugin>
+		<plugin>DelayMeNot</plugin>
+		<plugin>FFXIDB</plugin>
+		<plugin>Guildwork</plugin>
+		<plugin>InfoBar</plugin>
+		<plugin>JaZero</plugin>
+		<plugin>LightLuggage</plugin>
+		<plugin>Sandbox</plugin>
 		<plugin>Timers</plugin>
 	<!-- Addon Section -->
-		<addon>send</addon>
-		<addon>battlemod</addon>
+		<addon>Aecho</addon>
 		<addon>Anchor</addon>
-		<addon>React</addon>
+		<addon>autojoin</addon>
+		<addon>battlemod</addon>
+		<addon>cancel</addon>
+		<addon>ConsoleBG</addon>
+		<addon>DistancePlus</addon>
+		<addon>DressUp</addon>
+		<addon>findAll</addon>
 		<addon>Gearswap</addon>
-		<addon>Dressup</addon>
+		<addon>giltracker</addon>
+		<addon>homepoint</addon>
+		<addon>healbot</addon>
+		<addon>invtracker</addon>
+		<addon>itemizer</addon>
+		<addon>lottery</addon>
+		<addon>Organizer</addon>
+		<addon>pointwatch</addon>
+		<addon>request</addon>
+		<addon>React</addon>
+		<addon>send</addon>
+		<addon>shortcuts</addon>
+		<addon>silence</addon>
+		<addon>SpeedChecker</addon>
+		<addon>temps</addon>
+		<addon>timestamp</addon>
+		<addon>TParty</addon>
+		<addon>Treasury</addon>
+		<addon>Trusts</addon>
 	</Enurihel>
 </settings>
