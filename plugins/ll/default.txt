@@ -1,2 +1,0 @@
-//Default Profile
-//Empty to prevent unexpected behavior at bad times

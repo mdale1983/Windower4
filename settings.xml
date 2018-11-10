@@ -1,50 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <settings>
   <autoload>
-    <addon>cancel</addon>
-    <addon>checkparam</addon>
-    <addon>Clock</addon>
-    <addon>ConsoleBG</addon>
-    <addon>Debuffed</addon>
-    <addon>DistancePlus</addon>
-    <addon>findAll</addon>
-    <addon>giltracker</addon>
-    <addon>lottery</addon>
-    <addon>Omen</addon>
-    <addon>PetTP</addon>
     <addon>plugin_manager</addon>
-    <addon>rolltracker</addon>
-    <addon>shortcuts</addon>
-    <addon>Silence</addon>
-    <addon>SpeedChecker</addon>
-    <addon>temps</addon>
-    <addon>thtracker</addon>
-    <addon>TParty</addon>
-    <addon>Treasury</addon>
-    <addon>Trusts</addon>
-    <addon>update</addon>
-    <addon>timestamp</addon>
-    <addon>targetinfo</addon>
-    <addon>pointwatch</addon>
-    <addon>invtracker</addon>
+    <addon>battlemod</addon>
     <plugin>Config</plugin>
     <plugin>DelayMeNot</plugin>
     <plugin>FFXIDB</plugin>
+    <plugin>JaZero</plugin>
     <plugin>LightLuggage</plugin>
     <plugin>Sandbox</plugin>
     <plugin>Timers</plugin>
-    <plugin>JaZero</plugin>
   </autoload>
-  <profile name="Eilwolf">
+  <profile name="Enuri">
     <consolekey>Insert</consolekey>
     <uiscale>1</uiscale>
-    <supersampling>2</supersampling>
+    <hardwaremouse>false</hardwaremouse>
+    <alwaysenablegamepad>false</alwaysenablegamepad>
     <allowwinkey>true</allowwinkey>
   </profile>
-  <profile name="Enu">
+  <profile name="Enurihel">
     <consolekey>Insert</consolekey>
-    <width>1920</width>
-    <height>1080</height>
     <uiscale>1</uiscale>
+    <hardwaremouse>false</hardwaremouse>
+    <alwaysenablegamepad>false</alwaysenablegamepad>
+    <allowwinkey>true</allowwinkey>
   </profile>
 </settings>

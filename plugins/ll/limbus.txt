@@ -1,4 +1,0 @@
-//Limbus Profile
-//This profile lots all Ancient Beastcoins
-
-if item is 1875 then lot 
