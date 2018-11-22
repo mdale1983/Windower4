@@ -1,0 +1,16 @@
+_addon.name = 'AutoWS'
+_addon.version = '1.0.0'
+_addon.author = 'Enuri'
+_addon.command = 'AutoWS'
+
+require 'tables'
+require 'strings'
+require 'actions'
+packets = require('packets')
+
+windower.register_event('load', function()
+	assist_target = "Enuri"
+	current_target = 0
+	print("Current assist target: "..assist_target)
+    windower.send_command("input /autotarget off")
+end)

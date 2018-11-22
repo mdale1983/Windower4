@@ -1,0 +1,17 @@
+sets.exported={
+    main={ name="Taming Sari", augments={'STR+1','DEX+2','DMG:+3',}},
+    sub={ name="Kali", augments={'Mag. Acc.+15','String instrument skill +10','Wind instrument skill +10',}},
+    range={ name="Linos", augments={'All Songs+2','"Fast Cast"+3','STR+4 CHR+4',}},
+    head="Aya. Zucchetto",
+    body="Ayanmo Corazza +1",
+    hands="Aya. Manopolas +1",
+    legs="Aya. Cosciales +1",
+    feet={ name="Telchine Pigaches", augments={'Accuracy+12 Attack+12','Song spellcasting time -7%',}},
+    neck="Dampener's Torque",
+    waist="Dynamic Belt",
+    left_ear="Ishvara Earring",
+    right_ear="Halasz Earring",
+    left_ring="Vocane Ring",
+    right_ring="Gelatinous Ring",
+    back="Solemnity Cape",
+}

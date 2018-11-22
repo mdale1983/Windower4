@@ -1,0 +1,17 @@
+sets.exported={
+    main="Ragnarok",
+    sub="Utu Grip",
+    ammo="Ginsen",
+    head="Sulevia's Mask +1",
+    body="Sulevia's Plate. +2",
+    hands="Sulev. Gauntlets +2",
+    legs="Sulevi. Cuisses +1",
+    feet="Hermes' Sandals",
+    neck="Loricate Torque +1",
+    waist="Flume Belt",
+    left_ear="Telos Earring",
+    right_ear="Cessance Earring",
+    left_ring="Defending Ring",
+    right_ring="Gelatinous Ring +1",
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+}

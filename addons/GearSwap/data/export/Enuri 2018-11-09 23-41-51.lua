@@ -1,0 +1,17 @@
+sets.exported={
+    main="Masamune",
+    sub="Utu Grip",
+    ammo="Knobkierrie",
+    head={ name="Valorous Mask", augments={'Accuracy+21','Weapon skill damage +3%','STR+10','Attack+12',}},
+    body={ name="Sakonji Domaru +3", augments={'Enhances "Overwhelm" effect',}},
+    hands={ name="Valorous Mitts", augments={'"Mag.Atk.Bns."+23','Weapon skill damage +3%',}},
+    legs="Hiza. Hizayoroi +2",
+    feet={ name="Valorous Greaves", augments={'Accuracy+13','Weapon skill damage +4%','STR+8','Attack+8',}},
+    neck="Sam. Nodowa +1",
+    waist="Fotia Belt",
+    left_ear="Ishvara Earring",
+    right_ear="Brutal Earring",
+    left_ring="Regal Ring",
+    right_ring="Karieyh Ring",
+    back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
+}

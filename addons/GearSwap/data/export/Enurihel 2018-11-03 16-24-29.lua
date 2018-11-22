@@ -1,0 +1,17 @@
+sets.exported={
+    main="Bolelabunga",
+    sub="Genmei Shield",
+    ammo="Incantor Stone",
+    head="Befouled Crown",
+    body="Jhakri Robe +1",
+    hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','"Cure" potency +3%',}},
+    legs="Assid. Pants +1",
+    feet="Herald's Gaiters",
+    neck="Loricate Torque +1",
+    waist="Fucho-no-Obi",
+    left_ear="Etiolation Earring",
+    right_ear="Hearty Earring",
+    left_ring="Gelatinous Ring",
+    right_ring="Renaye Ring",
+    back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+4','"Fast Cast"+10',}},
+}

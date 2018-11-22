@@ -1,0 +1,34 @@
+<settings>
+    <global>
+        <X>0</X>
+        <Y>0</Y>
+        <Zoom>100</Zoom>
+        <Opacity>75</Opacity>
+        <ShowPC>true</ShowPC>
+        <ShowNPC>true</ShowNPC>
+        <ShowMob>true</ShowMob>
+        <ShowMarker>true</ShowMarker>
+        <ShowTargetLine>false</ShowTargetLine>
+        <Ranges></Ranges>
+    </global>
+    <Enuri>
+        <X>1554</X>
+        <Y>1204</Y>
+        <Zoom>40</Zoom>
+    </Enuri>
+    <Eilwolf>
+        <Zoom>25</Zoom>
+        <X>1557</X>
+        <Y>1207</Y>
+    </Eilwolf>
+    <Enurihel>
+        <X>1602</X>
+        <Y>1198</Y>
+        <Zoom>40</Zoom>
+    </Enurihel>
+    <Enuriel>
+        <X>1347</X>
+        <Y>1196</Y>
+        <Zoom>30</Zoom>
+    </Enuriel>
+</settings>

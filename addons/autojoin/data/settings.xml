@@ -1,0 +1,24 @@
+<?xml version="1.1" ?>
+<settings>
+    <global>
+        <autodecline>false</autodecline>
+        <blacklist />
+        <mode>whitelist</mode>
+        <whitelist>Enuri</whitelist>
+    </global>
+    <eilwolf>
+        <mode>blacklist</mode>
+    </eilwolf>
+    <enuri>
+        <mode>blacklist</mode>
+        <whitelist>Siani,Annasia,Taizai,Naf,Lohken,Pixzee,Enuri</whitelist>
+    </enuri>
+    <enuriel>
+        <mode>blacklist</mode>
+        <whitelist>Siani,Taizai,Naf,Lohken,Enuri</whitelist>
+    </enuriel>
+    <enurihel>
+        <mode>blacklist</mode>
+        <whitelist>Siani,Enuri,Taizai</whitelist>
+    </enurihel>
+</settings>

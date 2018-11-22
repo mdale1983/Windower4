@@ -1,0 +1,37 @@
+<?xml version="1.1" ?>
+<settings>
+    <global>
+        <bg>
+            <alpha>255</alpha>
+            <blue>0</blue>
+            <green>0</green>
+            <red>0</red>
+        </bg>
+        <extents>
+            <x>800</x>
+            <y>350</y>
+        </extents>
+        <pos>
+            <x>1</x>
+            <y>25</y>
+        </pos>
+    </global>
+    <enuri>
+        <extents>
+            <x>1500</x>
+            <y>350</y>
+        </extents>
+    </enuri>
+    <enuriel>
+        <extents>
+            <x>1500</x>
+            <y>350</y>
+        </extents>
+    </enuriel>
+    <enurihel>
+        <extents>
+            <x>1500</x>
+            <y>350</y>
+        </extents>
+    </enurihel>
+</settings>

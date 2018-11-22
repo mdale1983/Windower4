@@ -1,0 +1,18 @@
+sets.exported={
+    main="Hep. Sapara +1",
+    sub="Hep. Sapara +1",
+    range={ name="Anarchy +3", augments={'Delay:+60','TP Bonus +1000',}},
+    ammo="Chrono Bullet",
+    head="Meghanada Visor +1",
+    body="Emet Harness +1",
+    hands={ name="Herculean Gloves", augments={'Accuracy+30','Phys. dmg. taken -3%','STR+1',}},
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+    feet={ name="Herculean Boots", augments={'Accuracy+26','Damage taken-3%','DEX+8','Attack+3',}},
+    neck="Loricate Torque +1",
+    waist="Flume Belt",
+    left_ear="Cessance Earring",
+    right_ear="Telos Earring",
+    left_ring="Warp Ring",
+    right_ring="Vocane Ring",
+    back="Solemnity Cape",
+}
