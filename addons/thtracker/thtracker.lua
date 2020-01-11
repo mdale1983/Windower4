@@ -92,8 +92,9 @@ windower.register_event('incoming text', function(original, new, color)
 	end
 	
 	if deadmob == mob then
+		
 		th:text('No current mob')
-		--th:hide()
+		th:hide()
 		mob = nil
 	end
 
@@ -101,5 +102,5 @@ end)
 
 windower.register_event('zone change', function()
 	th:text('No current mob')
-	--th:hide()
+	th:hide()
 end)

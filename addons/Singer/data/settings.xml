@@ -20,8 +20,8 @@
             </flags>
             <padding>0</padding>
             <pos>
-                <x>0</x>
-                <y>0</y>
+                <x>9</x>
+                <y>613</y>
             </pos>
             <text>
                 <alpha>255</alpha>
@@ -47,14 +47,15 @@
             <refresh />
         </buffs>
         <clarion>
-            <aoe>minuet</aoe>
+            <aoe>madrigal</aoe>
         </clarion>
         <delay>4</delay>
         <dummy>Knight&apos;s Minne,Knight&apos;s Minne II</dummy>
-        <ignore />
+        <ignore>gunhild,kurairyu,lalafang,layawin,nubbski,loosha,osirys,enuri,chiaku</ignore>
         <marcato>Sentinel&apos;s Scherzo</marcato>
         <max_ws>99</max_ws>
         <min_ws>20</min_ws>
+        <nightingale>true</nightingale>
         <pianissimo>false</pianissimo>
         <recast>
             <buff>
@@ -71,38 +72,10 @@
         </song>
         <songs>
             <march>2</march>
-            <minuet>1</minuet>
+            <minuet>2</minuet>
         </songs>
         <timers>true</timers>
+        <troubadour>true</troubadour>
+        <use_ws>false</use_ws>
     </global>
-    <enuriel>
-        <box>
-            <pos>
-                <x>40</x>
-                <y>567</y>
-            </pos>
-        </box>
-        <clarion>
-            <aoe>madrigal</aoe>
-        </clarion>
-        <delay>2.5</delay>
-        <ignore>enurihel,annasia</ignore>
-        <marcato>Valor Minuet V</marcato>
-        <pianissimo>true</pianissimo>
-    </enuriel>
-    <enurihel>
-        <actions>true</actions>
-        <box>
-            <pos>
-                <x>15</x>
-                <y>454</y>
-            </pos>
-        </box>
-        <clarion>
-            <aoe>madrigal</aoe>
-        </clarion>
-        <delay>2.5</delay>
-        <marcato>Valor Minuet V</marcato>
-        <pianissimo>true</pianissimo>
-    </enurihel>
 </settings>

@@ -28,7 +28,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 _addon.name = 'AzureSets'
-_addon.version = '1.22'
+_addon.version = '1.23'
 _addon.author = 'Nitrous (Shiva)'
 _addon.commands = {'aset','azuresets','asets'}
 
@@ -71,7 +71,7 @@ windower.register_event('login', initialize)
 windower.register_event('job change', initialize:cond(function(job) return job == 16 end))
 
 function set_spells(spellset, setmode)
-    if windower.ffxi.get_player()['main_job_id'] ~= 16 and windower.ffxi.get_player()['sub_job_id'] ~= 16 then
+    if windower.ffxi.get_player()['main_job_id'] ~= 16 --[[and windower.ffxi.get_player()['sub_job_id'] ~= 16]] then
         error('Main job not set to Blue Mage.')
         return
     end
@@ -210,6 +210,16 @@ function save_set(setname)
     notice('Set '..setname..' saved.')
 end
 
+function delete_set(setname)
+    if settings.spellsets[setname] == nil then
+        error('Please choose an existing spellset.')
+        return
+    end    
+    settings.spellsets[setname] = nil
+    settings:save('all')
+    notice('Deleted '..setname..'.')
+end
+
 function get_spellset_list()
     log("Listing sets:")
     for key,_ in pairs(settings.spellsets) do
@@ -229,7 +239,7 @@ function get_spellset_content(spellset)
 end
 
 windower.register_event('addon command', function(...)
-    if windower.ffxi.get_player()['main_job_id'] ~= 16 and windower.ffxi.get_player()['sub_job_id'] ~= 16 then
+    if windower.ffxi.get_player()['main_job_id'] ~= 16 --[[and windower.ffxi.get_player()['sub_job_id'] ~= 16]] then
         error('You are not on (main) Blue Mage.')
         return nil
     end
@@ -248,7 +258,10 @@ windower.register_event('addon command', function(...)
             if args[1] ~= nil then
                 save_set(args[1])
             end
-
+        elseif comm == 'delete' then
+            if args[1] ~= nil then
+                delete_set(args[1])
+            end
         elseif comm == 'spellset' or comm == 'set' then
             if args[1] ~= nil then
                 set_spells(args[1], args[2] or settings.setmode)
@@ -272,10 +285,11 @@ windower.register_event('addon command', function(...)
             3. set <setname> (clearfirst|preservetraits) -- Same as spellset
             4. add <slot> <spell> -- Set (spell) to slot (slot (number)).
             5. save <setname> -- Saves current spellset as (setname).
-            6. currentlist -- Lists currently set spells.
-            7. setlist -- Lists all spellsets.
-            8. spelllist <setname> -- List spells in (setname)
-            9. help --Shows this menu.]]
+            6. delete <setname> -- Delete (setname) spellset.
+            7. currentlist -- Lists currently set spells.
+            8. setlist -- Lists all spellsets.
+            9. spelllist <setname> -- List spells in (setname)
+            10. help --Shows this menu.]]
             for _, line in ipairs(helptext:split('\n')) do
                 windower.add_to_chat(207, line..chat.controls.reset)
             end

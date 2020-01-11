@@ -8,27 +8,27 @@
         <ShowNPC>true</ShowNPC>
         <ShowMob>true</ShowMob>
         <ShowMarker>true</ShowMarker>
-        <ShowTargetLine>false</ShowTargetLine>
+        <ShowTargetLine>true</ShowTargetLine>
         <Ranges></Ranges>
     </global>
     <Enuri>
-        <X>1554</X>
-        <Y>1204</Y>
-        <Zoom>40</Zoom>
+        <X>1583</X>
+        <Y>1199</Y>
+        <Zoom>20</Zoom>
     </Enuri>
-    <Eilwolf>
-        <Zoom>25</Zoom>
-        <X>1557</X>
-        <Y>1207</Y>
-    </Eilwolf>
-    <Enurihel>
-        <X>1602</X>
-        <Y>1198</Y>
-        <Zoom>40</Zoom>
-    </Enurihel>
-    <Enuriel>
-        <X>1347</X>
-        <Y>1196</Y>
+    <Gunhild>
+        <X>1556</X>
+        <Y>1205</Y>
+        <Zoom>20</Zoom>
+    </Gunhild>
+    <Aelwulf>
+        <X>1552</X>
+        <Y>1197</Y>
         <Zoom>30</Zoom>
-    </Enuriel>
+    </Aelwulf>
+    <Eilwolf>
+        <X>1571</X>
+        <Y>1202</Y>
+        <Zoom>20</Zoom>
+    </Eilwolf>
 </settings>

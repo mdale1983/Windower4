@@ -29,23 +29,29 @@
                 <target>false</target>
             </self>
         </blinking>
+        <eilwolf>
+
+        </eilwolf>
         <enuri>
             <face>14</face>
             <race>1</race>
         </enuri>
-        <enurihel>
+        <gunhild>
             <face>2</face>
             <race>2</race>
-        </enurihel>
-		<oderio>
-			<face>2</face>
+        </gunhild>
+        <oderio>
+            <face>2</face>
             <race>2</race>
-		</oderio>
+        </oderio>
         <others>
 
         </others>
         <profiles>
-
+            <>
+                <face>2</face>
+                <race>2</race>
+            </>
         </profiles>
         <replacements>
             <body>

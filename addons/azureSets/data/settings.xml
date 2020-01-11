@@ -43,6 +43,26 @@
             <default>
 
             </default>
+            <einher>
+                <slot01>magic fruit</slot01>
+                <slot02>delta thrust</slot02>
+                <slot03>diamondhide</slot03>
+                <slot04>occultation</slot04>
+                <slot05>subduction</slot05>
+                <slot06>spectral floe</slot06>
+                <slot07>memento mori</slot07>
+                <slot08>barbed crescent</slot08>
+                <slot09>cursed sphere</slot09>
+                <slot10>erratic flutter</slot10>
+                <slot11>tenebral crush</slot11>
+                <slot12>reactor cool</slot12>
+                <slot13>entomb</slot13>
+                <slot14>magic hammer</slot14>
+                <slot15>blinding fulgor</slot15>
+                <slot16>sound blast</slot16>
+                <slot17>dream flower</slot17>
+                <slot18>battery charge</slot18>
+            </einher>
             <melee1>
                 <slot01>delta thrust</slot01>
                 <slot02>barbed crescent</slot02>
@@ -103,6 +123,25 @@
                 <slot18>diamondhide</slot18>
                 <slot19>dream flower</slot19>
             </melee3>
+            <salvage>
+                <slot01>barbed crescent</slot01>
+                <slot02>sinker drill</slot02>
+                <slot03>delta thrust</slot03>
+                <slot04>erratic flutter</slot04>
+                <slot05>searing tempest</slot05>
+                <slot06>sickle slash</slot06>
+                <slot07>diffusion ray</slot07>
+                <slot08>magic fruit</slot08>
+                <slot09>battery charge</slot09>
+                <slot10>spectral floe</slot10>
+                <slot11>subduction</slot11>
+                <slot12>tenebral crush</slot12>
+                <slot13>magic hammer</slot13>
+                <slot14>reactor cool</slot14>
+                <slot15>sudden lunge</slot15>
+                <slot16>saline coat</slot16>
+                <slot17>grand slam</slot17>
+            </salvage>
             <tanking>
                 <slot01>cocoon</slot01>
                 <slot02>sheep song</slot02>
@@ -113,6 +152,26 @@
                 <slot07>refueling</slot07>
                 <slot08>blank gaze</slot08>
             </tanking>
+            <testing>
+                <slot01>magic fruit</slot01>
+                <slot02>delta thrust</slot02>
+                <slot03>diamondhide</slot03>
+                <slot04>occultation</slot04>
+                <slot05>subduction</slot05>
+                <slot06>spectral floe</slot06>
+                <slot07>memento mori</slot07>
+                <slot08>barbed crescent</slot08>
+                <slot09>cursed sphere</slot09>
+                <slot10>erratic flutter</slot10>
+                <slot11>tenebral crush</slot11>
+                <slot12>reactor cool</slot12>
+                <slot13>entomb</slot13>
+                <slot14>magic hammer</slot14>
+                <slot15>blinding fulgor</slot15>
+                <slot16>sound blast</slot16>
+                <slot17>dream flower</slot17>
+                <slot18>battery charge</slot18>
+            </testing>
             <vw1>
                 <slot01>Firespit</slot01>
                 <slot02>Heat Breath</slot02>

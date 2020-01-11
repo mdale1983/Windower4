@@ -4,7 +4,7 @@
         <AutoUpdate>false</AutoUpdate>
         <CheckInterval>300</CheckInterval>
     </global>
-    <eilwolf>
+    <enuri>
         <AutoUpdate>true</AutoUpdate>
-    </eilwolf>
+    </enuri>
 </settings>

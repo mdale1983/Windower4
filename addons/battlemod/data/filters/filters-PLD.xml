@@ -5,7 +5,7 @@
         <!-- He's targeting an alliance member -->
             <all>true</all>
             <casting>true</casting>
-            <damage>true</damage>
+            <damage>false</damage>
             <healing>true</healing>
             <items>true</items>
             <melee>true</melee>
@@ -19,10 +19,10 @@
         <!-- He's targeting you! -->
             <all>false</all>
             <casting>false</casting>
-            <damage>true</damage>
+            <damage>false</damage>
             <healing>true</healing>
             <items>true</items>
-            <melee>true</melee>
+            <melee>false</melee>
             <misses>true</misses>
             <ranged>true</ranged>
             <readies>false</readies>
@@ -57,7 +57,7 @@
             <!-- He's targeting himself or another monster -->
                 <all>false</all>
                 <casting>false</casting>
-                <damage>true</damage>
+                <damage>false</damage>
                 <healing>true</healing>
                 <melee>true</melee>
                 <misses>true</misses>

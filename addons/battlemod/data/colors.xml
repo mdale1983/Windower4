@@ -5,38 +5,38 @@
         If you wish for a color to be unchanged from its normal color, set it to 0.
     -->
     <global>
-        <a10>2</a10>
-        <a11>3</a11>
-        <a12>38</a12>
-        <a13>39</a13>
-        <a14>123</a14>
-        <a15>124</a15>
-        <a20>466</a20>
-        <a21>476</a21>
-        <a22>482</a22>
-        <a23>492</a23>
-        <a24>497</a24>
-        <a25>503</a25>
-        <abilcol>257</abilcol>
-        <allydmg>457</allydmg>
+        <a10>205</a10>
+        <a11>359</a11>
+        <a12>167</a12>
+        <a13>38</a13>
+        <a14>125</a14>
+        <a15>185</a15>
+        <a20>429</a20>
+        <a21>257</a21>
+        <a22>200</a22>
+        <a23>481</a23>
+        <a24>483</a24>
+        <a25>208</a25>
+        <abilcol>0</abilcol>
+        <allydmg>0</allydmg>
         <enfeebcol>501</enfeebcol>
         <itemcol>256</itemcol>
-        <mob>259</mob>
-        <mobdmg>257</mobdmg>
-        <mobspellcol>362</mobspellcol>
-        <mobwscol>63</mobwscol>
-        <mydmg>457</mydmg>
-        <other>19</other>
+        <mob>69</mob>
+        <mobdmg>0</mobdmg>
+        <mobspellcol>0</mobspellcol>
+        <mobwscol>0</mobwscol>
+        <mydmg>0</mydmg>
+        <other>8</other>
         <otherdmg>0</otherdmg>
-        <p0>204</p0>
-        <p1>5</p1>
-        <p2>6</p2>
-        <p3>37</p3>
-        <p4>160</p4>
-        <p5>161</p5>
-        <partydmg>457</partydmg>
+        <p0>501</p0>
+        <p1>204</p1>
+        <p2>410</p2>
+        <p3>492</p3>
+        <p4>259</p4>
+        <p5>260</p5>
+        <partydmg>0</partydmg>
         <spellcol>0</spellcol>
-        <statuscol>207</statuscol>
-        <wscol>399</wscol>
+        <statuscol>0</statuscol>
+        <wscol>0</wscol>
     </global>
 </settings>

@@ -16,8 +16,8 @@ defaults.pos = {}
 defaults.pos.x = 1
 defaults.pos.y = 25
 defaults.extents = {}
-defaults.extents.x = 1800
-defaults.extents.y = 514
+defaults.extents.x = 600
+defaults.extents.y = 314
 
 settings = config.load(defaults)
 

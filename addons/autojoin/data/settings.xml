@@ -13,12 +13,12 @@
         <mode>blacklist</mode>
         <whitelist>Siani,Annasia,Taizai,Naf,Lohken,Pixzee,Enuri</whitelist>
     </enuri>
-    <enuriel>
+    <Aelwulf>
         <mode>blacklist</mode>
         <whitelist>Siani,Taizai,Naf,Lohken,Enuri</whitelist>
-    </enuriel>
-    <enurihel>
+    </Aelwulf>
+    <Gunhild>
         <mode>blacklist</mode>
         <whitelist>Siani,Enuri,Taizai</whitelist>
-    </enurihel>
+    </Gunhild>
 </settings>

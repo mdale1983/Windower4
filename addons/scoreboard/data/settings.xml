@@ -64,6 +64,14 @@
         <showfellow>true</showfellow>
         <visible>true</visible>
     </global>
+    <aelwulf>
+        <display>
+            <pos>
+                <x>1876</x>
+                <y>1198</y>
+            </pos>
+        </display>
+    </aelwulf>
     <eilwolf>
         <display>
             <pos>
@@ -75,8 +83,8 @@
     <enuri>
         <display>
             <pos>
-                <x>1832</x>
-                <y>1207</y>
+                <x>1836</x>
+                <y>1198</y>
             </pos>
         </display>
     </enuri>

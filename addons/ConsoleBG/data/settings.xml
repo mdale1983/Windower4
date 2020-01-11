@@ -22,16 +22,22 @@
             <y>350</y>
         </extents>
     </enuri>
-    <enuriel>
+	<Eilwolf>
         <extents>
             <x>1500</x>
             <y>350</y>
         </extents>
-    </enuriel>
-    <enurihel>
+    </Eilwolf>
+    <Aelwulf>
         <extents>
             <x>1500</x>
             <y>350</y>
         </extents>
-    </enurihel>
+    </Aelwulf>
+    <Gunhild>
+        <extents>
+            <x>1500</x>
+            <y>350</y>
+        </extents>
+    </Gunhild>
 </settings>

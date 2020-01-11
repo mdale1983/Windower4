@@ -5,7 +5,7 @@
         <GraphicalMode>false</GraphicalMode>
         <ExtendText>true</ExtendText>
         <TextColoring>false</TextColoring>
-        <SlimMode>true</SlimMode>
+        <!-- <SlimMode>false</SlimMode> -->
         <ShowTenths>true</ShowTenths>
         <!--One of: Alphabetical, Creation, Duration-->
         <SortType>Creation</SortType>
@@ -47,10 +47,10 @@
         <CustomTimerLimit>10</CustomTimerLimit>
         <RecastX>20</RecastX>
         <RecastY>450</RecastY>
-        <BuffsX>780</BuffsX>
-        <BuffsY>1150</BuffsY>
+        <BuffsX>680</BuffsX>
+        <BuffsY>1050</BuffsY>
         <CustomX>580</CustomX>
-        <CustomY>850</CustomY>
+        <CustomY>1050</CustomY>
         <!--If true, only items on the recast/buff lists will be displayed-->
         <WhitelistMode>false</WhitelistMode>
         <!--List of ability names to display recasts for if in whitelistMode and to exclude otherwise-->
@@ -63,5 +63,6 @@
         <SpellBuffFilter />
         <!--If true will show a font outline-->
         <Stroke>true</Stroke>
+        <SlimMode>false</SlimMode>
     </global>
 </settings>

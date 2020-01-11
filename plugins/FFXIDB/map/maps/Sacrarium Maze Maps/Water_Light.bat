@@ -1,1 +1,0 @@
-if exist "..\1c_0.gif" copy ".\Water_Light\1c_0.gif" "..\1c_0.gif"
